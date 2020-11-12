@@ -37,7 +37,7 @@ jobs:
           context: .
           file: ./Dockerfile
           tags: |
-            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{steps.tag.outputs.tag}}
+            ghcr.io/${{ github.repository_owner }}/spark-web:${{steps.tag.outputs.tag}}
 
       - name: build and push (stage)
         if:   github.event_name == 'push' && github.ref == 'refs/heads/master'
@@ -47,4 +47,4 @@ jobs:
           context: .
           file: ./Dockerfile
           tags: |
-            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest
+            ghcr.io/${{ github.repository_owner }}/spark-web:latest
