@@ -103,6 +103,12 @@ a {
     margin-bottom: 2px;
 }
 
+.thanks {
+    font-size: 1rem;
+    padding: 15px;
+    margin-bottom: 2px;
+}
+
 .about .columns.images .column {
     display: flex;
     justify-content: center;
