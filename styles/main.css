@@ -133,13 +133,43 @@ a {
 }
 
 .faq li {
-    margin-bottom: 1rem;
+    margin-bottom: 15px;
+    border-bottom: solid 1px lightgrey;
+}
+
+.faq li:first-child {
+    padding-top: 15px;
+    border-top: solid 1px lightgrey;
 }
 
 .faq .question {
+    position: relative;
     font-weight: bold;
     color: black;
-    margin-bottom: 0.5rem;
+    cursor: pointer;
+    margin-bottom: 15px;
+    padding-right: 60px;
+}
+
+.faq .question::before {
+    content: "▷";
+    color: gray;
+    position: absolute;
+    top: calc(50% - 0.6rem);
+    right: 15px;
+    font-size: 1.2rem;
+    line-height: 1rem;
+    transition-duration: 0.1s;
+}
+
+.faq .question.active::before {
+    transform: rotate(90deg);
+    transition-duration: 0.1s;
+}
+
+.faq .answer {
+    display: none;
+    margin-bottom: 15px;
 }
 
 footer {
