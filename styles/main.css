@@ -86,9 +86,29 @@ a {
     background-color: #ddd;
 }
 
-.spark-cases .description::first-letter {
+.capitalS::first-letter {
     font-size: 30px;
-    color: #1abc9c;
+    color: #3b64ad;
+}
+
+.capitalP::first-letter {
+    font-size: 30px;
+    color: #a83c55;
+}
+
+.capitalA::first-letter {
+    font-size: 30px;
+    color: #953caa;
+}
+
+.capitalR::first-letter {
+    font-size: 30px;
+    color: #ad865c;
+}
+
+.capitalK::first-letter {
+    font-size: 30px;
+    color: #4b684b;
 }
 
 .spark-cases .case .description.active {
