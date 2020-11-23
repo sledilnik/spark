@@ -30,16 +30,22 @@ a {
 }
 
 .hero {
-    background-color: #1abc9c;
-    margin-top: 52px;
+    background-color: white;
+    margin-top: 42px;
+	margin-bottom: 12px;
     padding: 30px 15px;
 }
 
-.hero .title,
-.hero .subtitle {
-    color: white;
+.hero .title {
+    color: black;
     margin-top: 0;
     margin-bottom: 0;
+}
+
+.hero .subtitle {
+    color: #bbbbbb;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .hero .subtitle {
@@ -207,8 +213,8 @@ footer {
 
 @media only screen and (max-width: 768px) {
     .hero {
-        background-color: #1abc9c;
-        margin-top: 52px;
+        background-color: white;
+        margin-top: 42px;
         padding: 0px 0px;
     }
     .title {
