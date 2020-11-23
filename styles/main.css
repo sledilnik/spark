@@ -1,233 +1,77 @@
-a {
-    color: #1abc9c;
+var acc = document.getElementsByClassName("collapsible");
+
+for (var i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
+function showDate(n) {
+  // Get the checkbox
+  var checkBox = document.getElementById("simpt".concat(n.toString()));
+  // Get the output text
+  var date = document.getElementById("date".concat(n.toString()));
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    date.style.display = "block";
+  } else {
+    date.style.display = "none";
+  }
 }
 
-.navbar .container {
-    display: flex;
-    width: 100%;
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+
+    return [day,month,year].join('.');
 }
 
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.1rem;
-}
+var simptoms_out = new Array("Vrocina", "Kaselj", "Utrujenost", "Zadihanost", "Izguba vonja/okusa", "Bolece zrelo", "Glavobol", "Bolece misice/sklepi", "Mrzlica", "Slabost/bruhanje", "Zamasen nos", "Driska");
 
-.navbar-menu {
-    background-color: transparent;
-}
-
-.navbar-menu a {
-    color: white;
-}
-
-.navbar-end {
-    display: flex;
-}
-
-.hero {
-    background-color: white;
-    margin-top: 42px;
-	margin-bottom: 12px;
-    padding: 30px 15px;
-}
-
-.hero .title {
-    color: black;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.hero .subtitle {
-    color: #bbbbbb;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.hero .subtitle {
-    margin-top: 15px !important;
-}
-
-.section-title::before {
-    content: "";
-    display: block;
-    height: 60px;
-    margin: -60px 0 0;
-}
-
-.title {
-    margin-top: 45px;
-}
-
-.spark-cases .case .description::before {
-    content: "▷";
-    position: absolute;
-    top: calc(50% - 0.6rem);
-    right: 15px;
-    font-size: 1.2rem;
-    line-height: 1rem;
-    transition-duration: 0.1s;
-}
-
-.spark-cases .case .description.active::before {
-    transform: rotate(90deg);
-    transition-duration: 0.1s;
-}
-
-.spark-cases .case .description {
-    position: relative;
-    background-color: #eee;
-    cursor: pointer;
-    padding: 15px;
-    padding-right: 60px;
-    margin-bottom: 2px;
-    line-height: 1.4rem;
-}
-
-.spark-cases .case .description:hover {
-    background-color: #ddd;
-}
-
-.capitalS::first-letter {
-    font-size: 30px;
-    color: #3b64ad;
-}
-
-.capitalP::first-letter {
-    font-size: 30px;
-    color: #a83c55;
-}
-
-.capitalA::first-letter {
-    font-size: 30px;
-    color: #953caa;
-}
-
-.capitalR::first-letter {
-    font-size: 30px;
-    color: #ad865c;
-}
-
-.capitalK::first-letter {
-    font-size: 30px;
-    color: #4b684b;
-}
-
-.spark-cases .case .description.active {
-    margin-bottom: 0;
-}
-
-.spark-cases .action {
-    display: none;
-    padding: 15px;
-    border: solid 1px #ddd;
-    border-top: 0;
-    margin-bottom: 2px;
-}
-
-.thanks {
-    font-size: 1rem;
-	padding-top: 15px;
-    margin-bottom: 2px;
-}
-
-.instruction {
-    font-size: 1rem;
-	padding-bottom: 15px;
-    margin-bottom: 2px;
-}
-
-.about .columns.images .column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.about img {
-    margin: 0 auto;
-    max-width: 50%;
-}
-
-.about img.sms {
-    max-width: 40%;
-}
-
-.motivation ol {
-    margin-left: 30px;
-}
-
-.motivation li {
-    margin-bottom: 1rem;
-}
-
-.faq li {
-    margin-bottom: 15px;
-    border-bottom: solid 1px lightgrey;
-}
-
-.faq li:first-child {
-    padding-top: 15px;
-    border-top: solid 1px lightgrey;
-}
-
-.faq .question {
-    position: relative;
-    font-weight: bold;
-    color: black;
-    cursor: pointer;
-    margin-bottom: 15px;
-    padding-right: 60px;
-}
-
-.faq .question::before {
-    content: "▷";
-    color: gray;
-    position: absolute;
-    top: calc(50% - 0.6rem);
-    right: 15px;
-    font-size: 1.2rem;
-    line-height: 1rem;
-    transition-duration: 0.1s;
-}
-
-.faq .question.active::before {
-    transform: rotate(90deg);
-    transition-duration: 0.1s;
-}
-
-.faq .answer {
-    display: none;
-    margin-bottom: 15px;
-}
-
-footer {
-    background-color: #ddd;
-    padding: 60px;
-    margin-top: 30px;
-    text-align: center;
-}
-
-@media only screen and (max-width: 768px) {
-    .hero {
-        background-color: white;
-        margin-top: 42px;
-        padding: 0px 0px;
-    }
-    .title {
-        margin-top: 15px;
-        font-size: 2rem !important;
-    }
-    .navbar .container {
-        margin: 0;
-    }
-    .container {
-        margin: 0 15px;
-    }
-    .spark-cases .case .description {
-        padding-right: 45px;
-    }
+function changeTextS() {
+	var text = 'Spark S, covid-spark.info<br>Mislim, da sva bila v zadnjem casu v stiku';
+	
+	flag = true;
+	for (i=0;i<simptoms.length;i++) {
+		var checkBox = document.getElementById("simpt".concat(i.toString()));
+        var simpt_i = simptoms_out[i].toLowerCase();
+		var date_i = formatDate(document.getElementById("date".concat(i.toString())).value);
+		
+		if (checkBox.checked == true){
+			if (flag){
+				text = text.concat(".<br>Sporocam ti, da imam simptome znacilne za SARS-CoV-2:<br>");
+				flag = false;
+			} else {
+			    text = text.concat(", ");
+			}
+			text = text.concat(simpt_i+" ("+date_i+")");
+		}
+	}
+	text = text.concat(".<br>Poglej: https://covid-spark.info");
+	
+	splitArray = text.split("<br>");
+	
+	var finalString = "sms:?body='";
+    for ( i = 0; i < splitArray.length; i++) {
+        finalString += splitArray[i]+ "%0a"; 
+        }
+	finalString += "'";
+	
+	document.getElementById('msgText').innerHTML=text;
+	document.getElementById('msgText').innerHTML=text;
+	document.getElementById('msgHref').href= finalString; 
 }
