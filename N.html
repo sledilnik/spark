@@ -86,29 +86,14 @@
                     <section id="plan">
 
                         <h2 class="title section-title is-2">Generiraj SMS</h2>
+						
                         <div class="instruction">
+						
 						<p>Tukaj lahko preprosto ustvariš sporočilo Spark.</p>
 						<br>
-						<h2 class="title section-title is-2">Spark S</h2>
-						<p>Označi simptome, značilne za SARS-CoV-2, ki jih navadno ne zaznavaš.</p>
-						<br>
+						<h2 class="title section-title is-2">Spark N</h2>
+						<p>Imam negativen test na SARS-CoV-2.</p>
 						
-						<table>
-						    <tr>
-								<th>Moji simptomi</th>
-								<th>Datum pričetka</th>
-						    </tr>
-							<script type="text/javascript">
-								var simptoms = new Array("Vročina", "Kašelj", "Utrujenost", "Zadihanost", "Izguba vonja ali okusa", "Boleče žrelo", "Glavobol", "Boleče mišice ali sklepi", "Mrzlica", "Slabost ali bruhanje", "Zamašen nos", "Driska");
-								
-								for (i=0;i<simptoms.length;i++) {
-									var iStr = i.toString();
-									document.write("<tr><td><div class='checkbox'><input type='checkbox' id='simpt"+iStr+"' name='simpt"+iStr+"' value='Simpt"+iStr+"' onclick='showDate("+iStr+");changeTextS();'><label for='simpt"+iStr+"'> "+simptoms[i]+"</label></div></td>");
-									document.write("<td><input type='date' id='date"+iStr+"' style='display:none' onchange='changeTextS();'></td></tr>");
-									document.getElementById('date'+iStr).valueAsDate = new Date();
-								}
-							</script>
-						</table>
                         </div>
 
 						<h2 class="title section-title is-2">Predogled:</h2>
@@ -135,7 +120,7 @@
     </footer>
 
     <script src="scripts/main.js"></script>
-	<script type="text/javascript">document.onload = changeTextS()</script>
+	<script type="text/javascript">document.onload = changeTextN()</script>
 	
 </body>
 
