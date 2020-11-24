@@ -235,6 +235,15 @@ body{
     margin-bottom: 2px;
 }
 
+.instructionSteps ol {
+    margin-left: 30px;
+	margin-bottom: 2rem;
+}
+
+.instructionSteps li {
+    margin: 1rem;
+}
+
 .about .columns.images .column {
     display: flex;
     justify-content: center;

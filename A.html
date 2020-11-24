@@ -83,29 +83,36 @@
                         <img src="img/spark-illustration@2x.png" alt="Ilustracija SPARK" class="mt-4 mb-4">
                     </section>-->
 					
-                    <section id="plan">
+                    <section id="plan" class="instructionSteps">
 
                         <h2 class="title section-title is-2">Generiraj SMS</h2>
                         <div class="instruction">
 						<p>Tukaj lahko preprosto ustvariš sporočilo Spark.</p>
 						<br>
-						<h2 class="title section-title is-2">Spark S</h2>
-						<p>Označi simptome, značilne za SARS-CoV-2, ki jih navadno ne zaznavaš.</p>
-						<br>
+						<h2 class="title section-title is-2">Spark A</h2>
+
+						<p><b>Navodilo:</b></p>
 						
+						<ol>
+                            <li>Določi nazgodnejši dan v preteklih 14 dneh, za katerega se spomniš, da si bil s pošiljateljem sporočila Spark R v stiku.</li>
+							<li>Temu datumu prištej 3 dneve.</li>
+							<li>Dobil si najzgodnejši datum, ko bi lahko že postal prenašalec virusa SARS-CoV-2.</li>
+						</ol>
+
+                        <p><b>Najzgodnejši datum, ko bi lahko že postal asimptomatični prenašalec virusa SARS-CoV-2:</b></p>
+
 						<table>
 						    <tr>
-								<th>Moji simptomi</th>
-								<th>Datum pričetka</th>
+								<th></th>
 						    </tr>
 							<script type="text/javascript">
-								var simptoms = new Array("Vročina", "Kašelj", "Utrujenost", "Zadihanost", "Izguba vonja ali okusa", "Boleče žrelo", "Glavobol", "Boleče mišice ali sklepi", "Mrzlica", "Slabost ali bruhanje", "Zamašen nos", "Driska");
-								
-								for (i=0;i<simptoms.length;i++) {
+								var d = new Date();
+								d.setDate(d.getDate()-14);
+	
+								for (i=0;i<1;i++) {
 									var iStr = i.toString();
-									document.write("<tr><td><div class='checkbox'><input type='checkbox' id='simpt"+iStr+"' name='simpt"+iStr+"' value='Simpt"+iStr+"' onclick='showDate("+iStr+");changeTextS();'><label for='simpt"+iStr+"'> "+simptoms[i]+"</label></div></td>");
-									document.write("<td><input type='date' id='date"+iStr+"' style='display:none' onchange='changeTextS();'></td></tr>");
-									document.getElementById('date'+iStr).valueAsDate = new Date();
+									document.write("<td><input type='date' id='date"+iStr+"' onchange='changeTextA(); value='></td></tr>");
+									document.getElementById('date'+iStr).valueAsDate = d;
 								}
 							</script>
 						</table>
@@ -135,7 +142,7 @@
     </footer>
 
     <script src="scripts/main.js"></script>
-	<script type="text/javascript">document.onload = changeTextS()</script>
+	<script type="text/javascript">document.onload = changeTextA()</script>
 	
 </body>
 
