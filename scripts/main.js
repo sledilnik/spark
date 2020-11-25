@@ -54,7 +54,7 @@ function changeTextS() {
 		
 		if (checkBox.checked == true){
 			if (flag){
-				text = text.concat(".<br>Sporocam ti, da imam simptome znacilne za SARS-CoV-2:<br>");
+				text = text.concat(".<br>Sporocam ti, da imam simptome znacilne za SARS-CoV-2: ");
 				flag = false;
 			} else {
 			    text = text.concat(", ");
@@ -87,7 +87,7 @@ function changeTextP() {
 		
 		if (checkBox.checked == true){
 			if (flag){
-				text = text.concat(".<br>Simptomi, ki sem jih zaznal:<br>");
+				text = text.concat(".<br>Simptomi, ki sem jih zaznal/a: ");
 				flag = false;
 			} else {
 			    text = text.concat(", ");
@@ -145,7 +145,7 @@ function changeTextA() {
 	var i = 0;
 	var date_i = formatDate(document.getElementById("date".concat(i.toString())).value);
 	
-	var text = 'Spark A, covid-spark.info<br>Mislim, da sva bila v zadnjem casu v stiku.<br>Sporocam ti, da sem morda od '+date_i+' asimptomaticni prenasalec virusa SARS-CoV-2';
+	var text = 'Spark A, covid-spark.info<br>Mislim, da sva bila v zadnjem casu v stiku.<br>Sporocam ti, da sem bil/a '+date_i+' v stiku z moznim superprenasalcem, kar pa pomeni, da bi lahko jaz postal/a 3 dni kasneje asimptomaticni prenasalec virusa';
 
 	text = text.concat(".<br>Preveri, kaj to pomeni zate: https://covid-spark.info");
 	
@@ -161,8 +161,8 @@ function changeTextA() {
 	document.getElementById('msgHref2').href= finalString; 
 }
 
-var R_scene1_out = new Array("da sem bil v stiku z vec osebami, ki so se po ", "da sem bil ");
-var R_scene2_out = new Array(" izkazale za simptomaticne ali pozitivne na SARS-CoV-2", " na dogodku supersirjenja virusa SARS-CoV-2");
+var R_scene1_out = new Array("da sem bil/a v stiku z vec osebami, ki so se po ", "da sem bil/a ");
+var R_scene2_out = new Array(" izkazale za simptomaticne ali pozitivne na SARS-CoV-2, kar pomeni, da bi lahko bil/a jaz njihov vir okuzbe in kuzen/kuzna ze 5 dni prej", " na dogodku supersirjenja virusa SARS-CoV-2, kar pa pomeni, da bi lahko 3 dni po dogodku postal/a kuzen/kuzna");
 
 function changeTextR() {
 	var text = 'Spark R, covid-spark.info<br>Mislim, da sva bila v zadnjem casu v stiku';
@@ -179,11 +179,12 @@ function changeTextR() {
 				text = text.concat(".<br>Sporocam ti, ");
 				flag = false;
 			} else {
-			    text = text.concat(" in ");
+			    text = text.concat(", in ");
 			}
 			text = text.concat(simpt1_i+date_i+simpt2_i);
 		}
 	}
+	
 	text = text.concat(".<br>Preveri, kaj to pomeni zate: https://covid-spark.info");
 	
 	splitArray = text.split("<br>");
