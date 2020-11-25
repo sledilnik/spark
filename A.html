@@ -96,10 +96,10 @@
 						<ol>
                             <li>Določi nazgodnejši dan v preteklih 14 dneh, za katerega se spomniš, da si bil s pošiljateljem sporočila Spark R v stiku.</li>
 							<li>Temu datumu prištej 3 dneve.</li>
-							<li>Dobil si najzgodnejši datum, ko bi lahko že postal prenašalec virusa SARS-CoV-2.</li>
+							<li>Dobil si najzgodnejši datum, ko bi že lahko postal prenašalec virusa SARS-CoV-2.</li>
 						</ol>
 
-                        <p><b>Najzgodnejši datum, ko bi lahko že postal asimptomatični prenašalec virusa SARS-CoV-2:</b></p>
+                        <p><b>Najzgodnejši datum, ko bi že lahko postal asimptomatični prenašalec virusa SARS-CoV-2:</b></p>
 
 						<table>
 						    <tr>
@@ -111,7 +111,7 @@
 	
 								for (i=0;i<1;i++) {
 									var iStr = i.toString();
-									document.write("<td><input type='date' id='date"+iStr+"' onchange='changeTextA(); value='></td></tr>");
+									document.write("<td><input type='date' id='date"+iStr+"' onchange='changeTextA();'></td></tr>");
 									document.getElementById('date'+iStr).valueAsDate = d;
 								}
 							</script>
@@ -138,7 +138,7 @@
     <footer>
         <div class="heading is-size-5">covid-spark.info</div>
         <div><a href="mailto:covid.spark@gmail.com">covid.spark@gmail.com</a></div>
-        <div>Beta verzija 0.15 (21.11.2020)</div>
+        <div>Beta verzija 0.16 (25.11.2020)</div>
     </footer>
 
     <script src="scripts/main.js"></script>

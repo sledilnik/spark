@@ -66,7 +66,7 @@ function changeTextS() {
 	
 	splitArray = text.split("<br>");
 	
-	var finalString = "sms:?body=";
+	var finalString = "sms:?&body=";
     for ( i = 0; i < splitArray.length; i++) {
         finalString += splitArray[i]+ "%0a"; 
         }
@@ -99,7 +99,7 @@ function changeTextP() {
 	
 	splitArray = text.split("<br>");
 	
-	var finalString = "sms:?body=";
+	var finalString = "sms:?&body=";
     for ( i = 0; i < splitArray.length; i++) {
         finalString += splitArray[i]+ "%0a"; 
         }
@@ -109,12 +109,29 @@ function changeTextP() {
 	document.getElementById('msgHref2').href= finalString; 
 }
 
+var N_scene_out = new Array("Imam negativen test na SARS-CoV-2.", "Moj potencialni vir okuzbe se je izkazal za negativno testiranega.");
+
 function changeTextN() {
-	var text = 'Spark N, covid-spark.info<br>Sporocam ti, da imam negativen rezultat na SARS-CoV-2.';
+	var text = 'Spark N, covid-spark.info<br>';
+	
+	flag = true;
+	for (i=0;i<N_scene_out.length;i++) {
+		var checkBox = document.getElementById("simpt".concat(i.toString()));
+        var simpt_i = N_scene_out[i];
+		
+		if (checkBox.checked == true){
+			if (flag){
+				flag = false;
+			} else {
+			    text = text.concat(" ");
+			}
+			text = text.concat(simpt_i);
+		}
+	}
 	
 	splitArray = text.split("<br>");
 	
-	var finalString = "sms:?body=";
+	var finalString = "sms:?&body=";
     for ( i = 0; i < splitArray.length; i++) {
         finalString += splitArray[i]+ "%0a"; 
         }
@@ -134,7 +151,7 @@ function changeTextA() {
 	
 	splitArray = text.split("<br>");
 	
-	var finalString = "sms:?body=";
+	var finalString = "sms:?&body=";
     for ( i = 0; i < splitArray.length; i++) {
         finalString += splitArray[i]+ "%0a"; 
         }
@@ -171,7 +188,7 @@ function changeTextR() {
 	
 	splitArray = text.split("<br>");
 	
-	var finalString = "sms:?body=";
+	var finalString = "sms:?&body=";
     for ( i = 0; i < splitArray.length; i++) {
         finalString += splitArray[i]+ "%0a"; 
         }

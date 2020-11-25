@@ -96,6 +96,26 @@ body{
     outline: 0;
 }
 
+.alert {
+  padding: 20px;
+  line-height: 0.5rem;
+}
+
+.closebtn {
+  margin-left: 5px;
+  color: #1abc9c;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
