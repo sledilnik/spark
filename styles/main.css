@@ -146,12 +146,9 @@ body{
 .hero {
     background-color: white;
     margin-top: 42px;
-	margin-bottom: 12px;
-    padding: 30px 15px;
 }
 
 .hero .title {
-    color: black;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -334,6 +331,11 @@ footer {
     text-align: center;
 }
 
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
 @media only screen and (max-width: 768px) {
     .hero {
         background-color: white;
@@ -343,6 +345,10 @@ footer {
     .title {
         margin-top: 15px;
         font-size: 2rem !important;
+    }
+    .subtitle {
+        margin-top: 15px;
+        font-size: 0.9rem !important;
     }
     .navbar .container {
         margin: 0;
