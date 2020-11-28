@@ -243,7 +243,7 @@ body{
 .thanks {
     font-size: 1rem;
 	padding-top: 15px;
-    margin-bottom: 2px;
+    margin-bottom: 40px;
 }
 
 .instruction {
@@ -359,4 +359,7 @@ footer {
     .spark-cases .case .description {
         padding-right: 45px;
     }
+	.about {
+		margin-top: 42px;
+	}
 }
