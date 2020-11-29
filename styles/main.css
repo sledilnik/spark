@@ -139,7 +139,7 @@ body{
     color: white;
 }
 
-.navbar-end {
+.navbar-start {
     display: flex;
 }
 
@@ -362,4 +362,15 @@ footer {
 	.about {
 		margin-top: 42px;
 	}
+}
+
+@media only screen and (max-width: 360px) {
+    .title {
+        margin-top: 1.6rem;
+        font-size: 1.8rem !important;
+    }
+    .subtitle {
+        margin-top: 15px;
+        font-size: 0.8rem !important;
+    }
 }

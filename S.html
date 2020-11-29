@@ -94,26 +94,48 @@
 						<p>Tukaj lahko preprosto ustvariš sporočilo Spark.</p>
 						<br>
 						<h2 class="title section-title is-2">Spark S</h2>
-						<p>Označi simptome, značilne za SARS-CoV-2, ki jih navadno ne zaznavaš.</p>
+						<p>Označi svoje simptome, ki si jih opazil/a in so značilni za COVID-19, ob simptomih pa dodaj datum njihovega pričetka. Na podlagi tega, bo lahko vsak posamezen prejemnik sporočila SMS ocenil, ali je bil s teboj v stiku po začetku tvoje kužnosti, ki navadno nastopi 48 ur pred prvimi opaženimi simptomi.</p>
+						<p>Ker poleg obveščanja oseb, ki bi jih lahko okužil, pomagaš tudi pri iskanju svojega vira okužbe, je pomembno, da obvestiš vse kontakte, s katerimi si bil v stiku v obdobju zadnjih 14 dni.</p>
 						<br>
 						
 						<table>
-						    <tr>
+						    <!--<tr>
 								<th>Moji simptomi</th>
 								<th>Datum pričetka</th>
-						    </tr>
+						    </tr>-->
 							<script type="text/javascript">
-								var simptoms = new Array("Vročina", "Kašelj", "Utrujenost", "Zadihanost", "Izguba vonja ali okusa", "Boleče žrelo", "Glavobol", "Boleče mišice ali sklepi", "Mrzlica", "Slabost ali bruhanje", "Zamašen nos", "Driska");
-								
-								for (i=0;i<simptoms.length;i++) {
+								var simptoms = new Array("Vročina", "Suh kašelj", "Utrujenost", "Bolečine", "Boleče žrelo", "Driska", "Konjunktivitis", "Glavobol", "Izguba okusa ali vonja", "Srbečica ali razbarvanost prstov", "Težave pri dihanju ali izguba sape", "Bolečina ali pritisk v prsih", "Izguba zmožnosti govora ali premikanja");
+								document.write("<tr><th>Najpogostejši simptomi</th><th>Datum pričetka</th></tr>")
+								for (i=0;i<3;i++) {
 									var iStr = i.toString();
 									document.write("<tr><td><div class='checkbox'><input type='checkbox' id='simpt"+iStr+"' name='simpt"+iStr+"' value='Simpt"+iStr+"' onclick='showDate("+iStr+");changeTextS();'><label for='simpt"+iStr+"'> "+simptoms[i]+"</label></div></td>");
 									document.write("<td><input type='date' id='date"+iStr+"' style='display:none' onchange='changeTextS();'></td></tr>");
 									document.getElementById('date'+iStr).valueAsDate = new Date();
 								}
+								document.write("<tr><th>Manj pogosti simptom</th></tr>")
+								for (i=3;i<10;i++) {
+									var iStr = i.toString();
+									document.write("<td><div class='checkbox'><input type='checkbox' id='simpt"+iStr+"' name='simpt"+iStr+"' value='Simpt"+iStr+"' onclick='showDate("+iStr+");changeTextS();'><label for='simpt"+iStr+"'> "+simptoms[i]+"</label></div></td>");
+									document.write("<td><input type='date' id='date"+iStr+"' style='display:none' onchange='changeTextS();'></td></tr>");
+									document.getElementById('date'+iStr).valueAsDate = new Date();
+								}
+								document.write("<tr><th>Resni simptomi</th></tr>")
+								for (i=10;i<simptoms.length;i++) {
+									var iStr = i.toString();
+									document.write("<td><div class='checkbox'><input type='checkbox' id='simpt"+iStr+"' name='simpt"+iStr+"' value='Simpt"+iStr+"' onclick='showDate("+iStr+");changeTextS();'><label for='simpt"+iStr+"'> "+simptoms[i]+"</label></div></td>");
+									document.write("<td><input type='date' id='date"+iStr+"' style='display:none' onchange='changeTextS();'></td></tr></tr>");
+									document.getElementById('date'+iStr).valueAsDate = new Date();
+								}
 							</script>
 						</table>
+						
+						
                         </div>
+						<p>
+							<i>Vir: <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/coronavirus-disease-covid-19#:~:text=symptoms">
+							World Health Organization, Coronavirus disease (COVID-19) (Pridobljeno: 29.11.2020)</i>
+							</a>
+						</p>
 
 						<h2 class="title section-title is-2">Predogled:</h2>
 						
@@ -139,7 +161,7 @@
     </footer>
 
     <script src="scripts/main.js"></script>
-	
+	<script type="text/javascript">document.onload = changeTextS()</script>
 </body>
 
 </html>
