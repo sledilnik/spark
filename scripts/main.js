@@ -80,30 +80,35 @@ function changeTextS() {
 	document.getElementById('msgHref2').href= finalString; 
 }
 
+var P_scene1_out = new Array("Prvi simptom sem imel/a ", "Nimam simptomov, a mislim, da sem se okuzil/a ", "Nimam simptomov in ne vem, kdaj sem se okuzil/a");
+var P_scene2_out = new Array(", kuzen/kuzna pa bi lahko bil/a ze 2 dneva prej", ", 3 dni po tem pa bi lahko bil/a kuzen/kuzna", "");
+
 function changeTextP() {
-	var text = 'Spark P, covid-spark.info<br>Mislim, da sva bila v zadnjem casu v stiku.<br>Sporocam ti, da imam pozitiven rezultat na SARS-CoV-2';
+	var text = 'Spark P, covid-spark.info<br>Imam pozitiven test na SARS-CoV-2';
 	
 	flag = true;
-	flag2 = false;
-	for (i=0;i<simptoms.length;i++) {
+	for (i=0;i<P_scene1_out.length;i++) {
 		var checkBox = document.getElementById("simpt".concat(i.toString()));
-        var simpt_i = simptoms_out[i].toLowerCase();
+        var simpt1_i = P_scene1_out[i];
+		var simpt2_i = P_scene2_out[i];
 		var date_i = formatDate(document.getElementById("date".concat(i.toString())).value);
 		
 		if (checkBox.checked == true){
 			if (flag){
-				text = text.concat(".<br>Simptomi, ki sem jih zaznal/a: ");
+				text = text.concat(".<br>");
 				flag = false;
-				flag2 = true;
 			} else {
-			    text = text.concat(", ");
+			    text = text.concat(", in ");
 			}
-			text = text.concat(simpt_i+" ("+date_i+")");
+			if (i<2){
+				text = text.concat(simpt1_i+date_i+simpt2_i);
+			} else {
+				text = text.concat(simpt1_i+simpt2_i);
+			}
+			
 		}
 	}
-	if (flag2) {
-		text = text.concat(".<br> Kuzen/Kuzna sem najverjetneje bil/a 2 dneva pred pricetkom prvih simptomov");
-	}
+	
 	text = text.concat(".<br>Preveri, kaj to pomeni zate: https://covid-spark.info");
 	
 	splitArray = text.split("<br>");

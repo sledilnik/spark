@@ -96,6 +96,106 @@ body{
     outline: 0;
 }
 
+.checkbox {
+    position: relative;
+    display: block;
+}
+
+.checkbox input[type="checkbox"] {
+    width: auto;
+    opacity: 0.00000001;
+    position: absolute;
+    left: 0;
+    margin-left: -20px;
+}
+
+.radio {
+    position: relative;
+    display: block;
+}
+
+.radio input[type="radio"] {
+    width: auto;
+    opacity: 0.00000001;
+    position: absolute;
+    left: 0;
+    margin-left: -20px;
+}
+
+.radio label {
+    position: relative;
+}
+
+.radio label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -6px;
+    margin: 4px;
+    width: 22px;
+    height: 22px;
+    transition: transform 0.28s ease;
+    border-radius: 5px;
+    border: 2px solid #1abc9c;
+}
+
+.radio label:after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 5px;
+    border-bottom: 2px solid #1abc9c;
+    border-left: 2px solid #1abc9c;
+    -webkit-transform: rotate(-45deg) scale(0);
+    transform: rotate(-45deg) scale(0);
+    transition: transform ease 0.25s;
+    will-change: transform;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+}
+
+.radio input[type="radio"]:checked ~ label::before {
+    color: #1abc9c;
+}
+
+.radio input[type="radio"]:checked ~ label::after {
+    -webkit-transform: rotate(-45deg) scale(1);
+    transform: rotate(-45deg) scale(1);
+}
+
+.radio label {
+    min-height: 34px;
+    display: block;
+    padding-left: 40px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+    vertical-align: sub;
+}
+.radio label span {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.radio input[type="radio"]:focus + label::before {
+    outline: 0;
+}
+
+.radio {
+    position: relative;
+    display: block;
+}
+
+.radio input[type="radio"] {
+    width: auto;
+    opacity: 0.00000001;
+    position: absolute;
+    left: 0;
+    margin-left: -20px;
+}
+
 .alert {
   padding: 20px;
   line-height: 0.5rem;
@@ -174,7 +274,7 @@ body{
     margin-top: 45px;
 }
 
-.spark-cases .case .description::before {
+.spark-cases .case .description::after {
     content: "▷";
     position: absolute;
     top: calc(50% - 0.6rem);
@@ -184,7 +284,7 @@ body{
     transition-duration: 0.1s;
 }
 
-.spark-cases .case .description.active::before {
+.spark-cases .case .description.active::after {
     transform: rotate(90deg);
     transition-duration: 0.1s;
 }
