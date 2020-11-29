@@ -80,8 +80,8 @@ function changeTextS() {
 	document.getElementById('msgHref2').href= finalString; 
 }
 
-var P_scene1_out = new Array("", "Nimam simptomov, a mislim, da sem se okuzil/a ", "Nimam simptomov in ne vem, kdaj sem se okuzil/a");
-var P_scene2_out = new Array(" sem imel/a prvi simptom, kuzen/kuzna pa bi lahko bil/a ze 2 dneva prej", ", 3 dni po tem pa bi lahko bil/a kuzen/kuzna", "");
+var P_scene1_out = new Array("Prvi simptom sem imel/a ", "Nimam simptomov, a mislim, da sem se okuzil/a ", "Nimam simptomov in ne vem, kdaj sem se okuzil/a");
+var P_scene2_out = new Array(", kuzen/kuzna pa bi lahko bil/a ze 2 dneva prej", ", 3 dni po tem pa bi lahko bil/a kuzen/kuzna", "");
 
 function changeTextP() {
 	var text = 'Spark P, covid-spark.info<br>Imam pozitiven test na SARS-CoV-2';

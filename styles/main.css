@@ -196,14 +196,6 @@ body{
     margin-left: -20px;
 }
 
-
-
-
-
-
-
-
-
 .alert {
   padding: 20px;
   line-height: 0.5rem;
@@ -292,7 +284,7 @@ body{
     transition-duration: 0.1s;
 }
 
-.spark-cases .case .description.active::before {
+.spark-cases .case .description.active::after {
     transform: rotate(90deg);
     transition-duration: 0.1s;
 }
