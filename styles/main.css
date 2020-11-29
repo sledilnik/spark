@@ -352,6 +352,12 @@ body{
     margin-bottom: 2px;
 }
 
+.disclaimer {
+    font-size: 1rem;
+	padding-bottom: 15px;
+    margin-bottom: 2px;
+}
+
 .instructionSteps ol {
     margin-left: 30px;
 	margin-bottom: 2rem;
