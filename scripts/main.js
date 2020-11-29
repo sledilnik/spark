@@ -41,12 +41,12 @@ function formatDate(date) {
     return [day,month,year].join('.');
 }
 
-var simptoms_out = new Array("Vrocina", "Kaselj", "Utrujenost", "Zadihanost", "Izguba vonja/okusa", "Bolece zrelo", "Glavobol", "Bolece misice/sklepi", "Mrzlica", "Slabost/bruhanje", "Zamasen nos", "Driska");
-
+var simptoms_out = new Array("Vrocina", "Suh kaselj", "Utrujenost", "Bolecine", "Bolece zrelo", "Driska", "Konjunktivitis", "Glavobol", "Izguba okusa/vonja", "Srbecica/razbarvanost prstov", "Tezave pri dihanju/izguba sape", "Bolecina/pritisk v prsih", "Izguba zmožnosti govora/premikanja");
 function changeTextS() {
 	var text = 'Spark S, covid-spark.info<br>Mislim, da sva bila v zadnjem casu v stiku';
 	
 	flag = true;
+	flag2 = false;
 	for (i=0;i<simptoms.length;i++) {
 		var checkBox = document.getElementById("simpt".concat(i.toString()));
         var simpt_i = simptoms_out[i].toLowerCase();
@@ -54,13 +54,17 @@ function changeTextS() {
 		
 		if (checkBox.checked == true){
 			if (flag){
-				text = text.concat(".<br>Sporocam ti, da imam simptome znacilne za SARS-CoV-2: ");
+				text = text.concat(".<br>Sporocam ti, da imam simptome, znacilne za COVID-19: ");
 				flag = false;
+				flag2 = true;
 			} else {
 			    text = text.concat(", ");
 			}
 			text = text.concat(simpt_i+" ("+date_i+")");
 		}
+	}
+	if (flag2) {
+		text = text.concat(".<br> Kuzen/Kuzna sem najverjetneje bil/a 2 dneva pred pricetkom prvih simptomov");
 	}
 	text = text.concat(".<br>Preveri, kaj to pomeni zate: https://covid-spark.info");
 	
@@ -80,6 +84,7 @@ function changeTextP() {
 	var text = 'Spark P, covid-spark.info<br>Mislim, da sva bila v zadnjem casu v stiku.<br>Sporocam ti, da imam pozitiven rezultat na SARS-CoV-2';
 	
 	flag = true;
+	flag2 = false;
 	for (i=0;i<simptoms.length;i++) {
 		var checkBox = document.getElementById("simpt".concat(i.toString()));
         var simpt_i = simptoms_out[i].toLowerCase();
@@ -89,11 +94,15 @@ function changeTextP() {
 			if (flag){
 				text = text.concat(".<br>Simptomi, ki sem jih zaznal/a: ");
 				flag = false;
+				flag2 = true;
 			} else {
 			    text = text.concat(", ");
 			}
 			text = text.concat(simpt_i+" ("+date_i+")");
 		}
+	}
+	if (flag2) {
+		text = text.concat(".<br> Kuzen/Kuzna sem najverjetneje bil/a 2 dneva pred pricetkom prvih simptomov");
 	}
 	text = text.concat(".<br>Preveri, kaj to pomeni zate: https://covid-spark.info");
 	
