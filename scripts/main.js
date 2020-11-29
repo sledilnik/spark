@@ -26,7 +26,6 @@ function showDate(n) {
   }
 }
 
-
 function formatDate(date) {
     var d = new Date(date),
         month = '' + (d.getMonth() + 1),
@@ -41,7 +40,29 @@ function formatDate(date) {
     return [day,month,year].join('.');
 }
 
+function AdujstTxtGender(text, word, wordm, wordf) {
+	var checkBoxM = document.getElementById("male");
+	var checkBoxF = document.getElementById("female");
+	
+	splitArrayGender = text.split(word);
+	var finalStringG = splitArrayGender[0];
+	if (checkBoxM.checked == true) {
+		for ( i = 1; i < splitArrayGender.length; i++) {
+			finalStringG += wordm+splitArrayGender[i]; 
+        }
+		return finalStringG;
+	}
+	if (checkBoxF.checked == true) {
+		for ( i = 1; i < splitArrayGender.length; i++) {
+			finalStringG += wordf+splitArrayGender[i]; 
+        }
+		return finalStringG;
+	}
+	return text;
+}
+
 var simptoms_out = new Array("Vrocina", "Suh kaselj", "Utrujenost", "Bolecine", "Bolece zrelo", "Driska", "Konjunktivitis", "Glavobol", "Izguba okusa/vonja", "Srbecica/razbarvanost prstov", "Tezave pri dihanju/izguba sape", "Bolecina/pritisk v prsih", "Izguba zmožnosti govora/premikanja");
+
 function changeTextS() {
 	var text = 'Spark S, covid-spark.info<br>Mislim, da sva bila v zadnjem casu v stiku';
 	
@@ -67,6 +88,10 @@ function changeTextS() {
 		text = text.concat(".<br> Kuzen/Kuzna sem najverjetneje bil/a 2 dneva pred pricetkom prvih simptomov");
 	}
 	text = text.concat(".<br>Preveri, kaj to pomeni zate: https://covid-spark.info");
+	
+	text = AdujstTxtGender(text, "/a", "", "a");
+	text = AdujstTxtGender(text, "Kuzen/Kuzna", "Kuzen", "Kuzna");
+	text = AdujstTxtGender(text, "kuzen/kuzna", "kuzen", "kuzna");
 	
 	splitArray = text.split("<br>");
 	
@@ -110,6 +135,10 @@ function changeTextP() {
 	}
 	
 	text = text.concat(".<br>Preveri, kaj to pomeni zate: https://covid-spark.info");
+	
+	text = AdujstTxtGender(text, "/a", "", "a");
+	text = AdujstTxtGender(text, "Kuzen/Kuzna", "Kuzen", "Kuzna");
+	text = AdujstTxtGender(text, "kuzen/kuzna", "kuzen", "kuzna");
 	
 	splitArray = text.split("<br>");
 	
@@ -160,6 +189,10 @@ function changeTextA() {
 	var date_i = formatDate(document.getElementById("date".concat(i.toString())).value);
 	
 	var text = 'Spark A, covid-spark.info<br>Mislim, da sva bila v zadnjem casu v stiku.<br>Sporocam ti, da sem bil/a '+date_i+' v stiku z moznim superprenasalcem, kar pa pomeni, da bi lahko jaz postal/a 3 dni kasneje asimptomaticni prenasalec virusa';
+	
+	text = AdujstTxtGender(text, "/a", "", "a");
+	text = AdujstTxtGender(text, "Kuzen/Kuzna", "Kuzen", "Kuzna");
+	text = AdujstTxtGender(text, "kuzen/kuzna", "kuzen", "kuzna");
 
 	text = text.concat(".<br>Preveri, kaj to pomeni zate: https://covid-spark.info");
 	
@@ -201,6 +234,10 @@ function changeTextR() {
 	
 	text = text.concat(".<br>Preveri, kaj to pomeni zate: https://covid-spark.info");
 	
+	text = AdujstTxtGender(text, "/a", "", "a");
+	text = AdujstTxtGender(text, "Kuzen/Kuzna", "Kuzen", "Kuzna");
+	text = AdujstTxtGender(text, "kuzen/kuzna", "kuzen", "kuzna");
+	
 	splitArray = text.split("<br>");
 	
 	var finalString = "sms:?&body=";
@@ -212,3 +249,4 @@ function changeTextR() {
 	document.getElementById('msgHref').href= finalString;
 	document.getElementById('msgHref2').href= finalString; 
 }
+
