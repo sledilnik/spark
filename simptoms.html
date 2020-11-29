@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+	
 	<meta name="theme-color" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	
+
     <title>Covid-SPARK</title>
     <meta name="description" content="Covid-SPARK * Zaustavimo virus s pravočasnim obveščanjem!">
 
@@ -57,10 +57,11 @@
                 <div class="navbar-brand">
                     <a class="navbar-item" href="index.html">Covid-SPARK</a>
                 </div>
-				
                 <div class="navbar-menu is-active">
-                    <div class="navbar-end">
-                        <a class="navbar-item" href="#" id="msgHref2" class="right">Pošlji SMS</a>
+                    <div class="navbar-start">
+                        <a class="navbar-item" href="other.html#motivation" class="right">Zakaj?</a>
+                        <a class="navbar-item" href="other.html#faq" class="right">FAQ</a>
+                        <a class="navbar-item" href="other.html#contact" class="right">Kontakt</a>
                     </div>
                 </div>
             </div>
@@ -89,34 +90,39 @@
 					
                     <section id="plan">
 
-                        <h2 class="title section-title is-2">Generiraj SMS</h2>
-						
+                        <h2 class="title section-title is-2">Značilni simptomi za COVID-19</h2>
                         <div class="instruction">
-						
-						<p>Tukaj lahko preprosto ustvariš sporočilo Spark.</p>
-						<br>
-						<h2 class="title section-title is-2">Spark N</h2>
 
+						<!--<tr>
+							<th>Moji simptomi</th>
+							<th>Datum pričetka</th>
+						</tr>-->
 						<script type="text/javascript">
-							var N_scene = new Array("Imam negativen test na SARS-CoV-2.", "Moj potencialni vir okužbe se je izkazal za negativno testiranega.");
-
-							for (i=0;i<N_scene.length;i++) {
+							var simptoms = new Array("Vročina", "Suh kašelj", "Utrujenost", "Bolečine", "Boleče žrelo", "Driska", "Konjunktivitis", "Glavobol", "Izguba okusa ali vonja", "Srbečica ali razbarvanost prstov", "Težave pri dihanju ali izguba sape", "Bolečina ali pritisk v prsih", "Izguba zmožnosti govora ali premikanja");
+							document.write("<b>Najpogostejši simptomi:</b><ul>")
+							for (i=0;i<3;i++) {
 								var iStr = i.toString();
-								document.write("<div class='checkbox'><input type='checkbox' id='simpt"+iStr+"' name='simpt"+iStr+"' value='Simpt"+iStr+"' onclick='changeTextN();'><label for='simpt"+iStr+"'>"+N_scene[i]+"</label></div>");
+								document.write("<li>"+simptoms[i]+"</li>");
 							}
+							document.write("</ul><br> <b>Manj pogosti simptom:</b><ul>")
+							for (i=3;i<10;i++) {
+								var iStr = i.toString();
+								document.write("<li>"+simptoms[i]+"</li>");
+							}
+							document.write("</ul><br> <b>Resni simptomi:</b><ul>")
+							for (i=10;i<simptoms.length;i++) {
+								var iStr = i.toString();
+								document.write("<li>"+simptoms[i]+"</li>");
+							}
+							document.write("</ul>")
 						</script>
-
-                        </div>
-
-						<h2 class="title section-title is-2">Predogled SMS-a:</h2>
 						
-						<div class="instruction">
-						<b><p id="msgText" ></p></b>
-						</div>
-
-						<h2 class="title section-title is-2">Pošlji SMS:
-						<a href="#" id="msgHref"><i class="fa fa-envelope"></i></a>
-						</h2>
+                        </div>
+						<p>
+							<i>Vir: <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/coronavirus-disease-covid-19#:~:text=symptoms">
+							World Health Organization, Coronavirus disease (COVID-19) (Pridobljeno: 29.11.2020)</i>
+							</a>
+						</p>
 						
 					</section>
                 </div>
@@ -131,8 +137,7 @@
     </footer>
 
     <script src="scripts/main.js"></script>
-	<script type="text/javascript">document.onload = changeTextN()</script>
-	
+	<script type="text/javascript">document.onload = changeTextS()</script>
 </body>
 
 </html>
