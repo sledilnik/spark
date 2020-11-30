@@ -106,21 +106,21 @@
 								document.write("<tr><th>Najpogostejši simptomi</th><th>Datum pričetka</th></tr>")
 								for (i=0;i<3;i++) {
 									var iStr = i.toString();
-									document.write("<tr><td><div class='checkbox'><input type='checkbox' id='simpt"+iStr+"' name='simpt"+iStr+"' value='Simpt"+iStr+"' onclick='showDate("+iStr+");changeTextS();'><label for='simpt"+iStr+"'> "+simptoms[i]+"</label></div></td>");
+									document.write("<tr><td><div class='checkbox'><input type='checkbox' id='simpt"+iStr+"' name='simpt"+iStr+"' value='Simpt"+iStr+"' onclick='showDate("+iStr+");changeTextS();'><label for='simpt"+iStr+"'> "+simptoms[i].toLowerCase()+"</label></div></td>");
 									document.write("<td><input type='date' id='date"+iStr+"' style='display:none' onchange='changeTextS();'></td></tr>");
 									document.getElementById('date'+iStr).valueAsDate = new Date();
 								}
 								document.write("<tr><th>Manj pogosti simptomi</th></tr>")
 								for (i=3;i<10;i++) {
 									var iStr = i.toString();
-									document.write("<td><div class='checkbox'><input type='checkbox' id='simpt"+iStr+"' name='simpt"+iStr+"' value='Simpt"+iStr+"' onclick='showDate("+iStr+");changeTextS();'><label for='simpt"+iStr+"'> "+simptoms[i]+"</label></div></td>");
+									document.write("<td><div class='checkbox'><input type='checkbox' id='simpt"+iStr+"' name='simpt"+iStr+"' value='Simpt"+iStr+"' onclick='showDate("+iStr+");changeTextS();'><label for='simpt"+iStr+"'> "+simptoms[i].toLowerCase()+"</label></div></td>");
 									document.write("<td><input type='date' id='date"+iStr+"' style='display:none' onchange='changeTextS();'></td></tr>");
 									document.getElementById('date'+iStr).valueAsDate = new Date();
 								}
 								document.write("<tr><th>Resni simptomi</th></tr>")
 								for (i=10;i<simptoms.length;i++) {
 									var iStr = i.toString();
-									document.write("<td><div class='checkbox'><input type='checkbox' id='simpt"+iStr+"' name='simpt"+iStr+"' value='Simpt"+iStr+"' onclick='showDate("+iStr+");changeTextS();'><label for='simpt"+iStr+"'> "+simptoms[i]+"</label></div></td>");
+									document.write("<td><div class='checkbox'><input type='checkbox' id='simpt"+iStr+"' name='simpt"+iStr+"' value='Simpt"+iStr+"' onclick='showDate("+iStr+");changeTextS();'><label for='simpt"+iStr+"'> "+simptoms[i].toLowerCase()+"</label></div></td>");
 									document.write("<td><input type='date' id='date"+iStr+"' style='display:none' onchange='changeTextS();'></td></tr></tr>");
 									document.getElementById('date'+iStr).valueAsDate = new Date();
 								}
