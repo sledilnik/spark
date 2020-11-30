@@ -100,17 +100,17 @@
 							document.write("<b>Najpogostejši simptomi:</b><ul>")
 							for (i=0;i<3;i++) {
 								var iStr = i.toString();
-								document.write("<li>"+simptoms[i]+"</li>");
+								document.write("<li>"+simptoms[i].toLowerCase()+"</li>");
 							}
 							document.write("</ul><br> <b>Manj pogosti simptomi:</b><ul>")
 							for (i=3;i<10;i++) {
 								var iStr = i.toString();
-								document.write("<li>"+simptoms[i]+"</li>");
+								document.write("<li>"+simptoms[i].toLowerCase()+"</li>");
 							}
 							document.write("</ul><br> <b>Resni simptomi:</b><ul>")
 							for (i=10;i<simptoms.length;i++) {
 								var iStr = i.toString();
-								document.write("<li>"+simptoms[i]+"</li>");
+								document.write("<li>"+simptoms[i].toLowerCase()+"</li>");
 							}
 							document.write("</ul>")
 						</script>
