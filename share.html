@@ -58,7 +58,7 @@
 				
                 <div class="navbar-menu is-active">
                     <div class="navbar-end">
-                        <a class="navbar-item" href="sms:?&body=Obisci spletni portal https://covid-spark.info. Deli naprej, da omejimo virus." id="msgHref2" class="right">Pošlji SMS</a>
+                        <a class="navbar-item" href="#" id="msgHref2" class="right">Pošlji SMS</a>
                     </div>
                 </div>
             </div>
@@ -98,12 +98,23 @@
 						
 						<h2 class="title section-title is-2">Predogled SMS-a:</h2>
 						
+						<table>
+						<tr>
+							<td style="width: 131px;">
+								<b>Dodaj šumnike:</b>
+							</td>
+							<td>
+								<div class='checkbox'><input type='checkbox' id='sumniki' name='sumniki' value='sumniki' onclick='changeTextShare();' checked><label for='sumniki' ></label></div>
+							</td>
+						</tr>
+						</table>
+						
 						<div class="instruction">
-						<b><p>Obisci spletni portal https://covid-spark.info. Deli naprej, da omejimo virus.</p></b>
+						<b><p id="msgText" ></p></b>
 						</div>
 
 						<h2 class="title section-title is-2">Pošlji SMS:
-						<a href="sms:?&body=Obisci spletni portal https://covid-spark.info. Deli naprej, da omejimo virus."><i class="fa fa-envelope"></i></a>
+						<a href="#" id="msgHref"><i class="fa fa-envelope"></i></a>
 						</h2>
 						
 					</section>
@@ -119,7 +130,7 @@
     </footer>
 
     <script src="scripts/main.js"></script>
-	
+	<script type="text/javascript">document.onload = changeTextShare()</script>
 </body>
 
 </html>
