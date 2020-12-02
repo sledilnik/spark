@@ -2,5 +2,6 @@
 image:
   repository: ghcr.io/sledilnik/spark
 ingressroute:
+  enabled: true
   rule: Host(`www.covid-spark.info`) || Host(`covid-spark.info`)
   certResolver: letsencrypt
