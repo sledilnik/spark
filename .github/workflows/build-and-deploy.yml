@@ -1,5 +1,4 @@
-name: Build container image
-
+name: Build and deploy
 on:
   push:
     # build master branch (staging)
@@ -39,7 +38,7 @@ jobs:
         with:
           push: true
           context: .
-          file: ./Dockerfile-new
+          file: ./Dockerfile
           tags: |
             ghcr.io/${{ github.repository_owner }}/spark:${{ env.IMAGE_TAG}}
 
