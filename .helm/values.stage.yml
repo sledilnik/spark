@@ -1,0 +1,6 @@
+---
+image:
+  repository: ghcr.io/sledilnik/spark
+ingressroute:
+  rule: Host(`stage.covid-spark.info`)
+  certResolver: letsencrypt
