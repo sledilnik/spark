@@ -47,5 +47,5 @@ jobs:
         uses: sledilnik/action-helm-deploy@master
         with:
           chartName: sledilnik/spark
-          chartVersion: '0.2.0'
+          chartVersion: '0.2.2'
           kubeconfig: '${{ secrets.KUBECONFIG }}'        
