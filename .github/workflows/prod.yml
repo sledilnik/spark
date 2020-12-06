@@ -48,6 +48,6 @@ jobs:
       - name: Deploy
         uses: sledilnik/action-helm-deploy@master
         with:
-          chartName: sledilnik/django
-          chartVersion: '0.1.11'
+          chartName: sledilnik/spark
+          chartVersion: '0.9.0'
           kubeconfig: '${{ secrets.KUBECONFIG }}'        
