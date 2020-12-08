@@ -215,7 +215,7 @@ function changeTextA() {
 	var i = 0;
 	var date_i = formatDate(document.getElementById("date".concat(i.toString())).value);
 	
-	var text = 'Spark A, covid-spark.info<br>Mislim, da sva bila v zadnjem času v stiku.<br>Sporočam ti, da sem bil/a '+date_i+' v stiku z možnim superprenašalcem, kar pa pomeni, da bi lahko jaz postal/a 3 dni kasneje asimptomatični prenašalec virusa';
+	var text = 'Spark A, covid-spark.info<br>Mislim, da sva bila v zadnjem času v stiku.<br>Sporočam ti, da sem bil/a '+date_i+' v stiku z možnim superprenašalcem, kar pomeni, da bi lahko 3 dni kasneje jaz postal/a asimptomatični prenašalec virusa';
 	
 	text = AdujstTxtGender(text, "/a", "", "a");
 	text = AdujstTxtGender(text, "Kužen/Kužna", "Kužen", "Kužna");
