@@ -6,11 +6,11 @@ on:
 
 env:
   RELEASE_NAME: spark
-  DEPLOY_ENV: production
-  DEPLOY_URL: https://covid-spark.info
   CHART_VALUES_FILE: .helm/values.prod.yml
   DEPLOY_NAMESPACE: spark-prod
   IMAGE_TAG: ${{ github.event.release.tag_name }}
+  DEPLOY_ENV: production
+  DEPLOY_URL: https://covid-spark.info
 
 jobs:
   build:
