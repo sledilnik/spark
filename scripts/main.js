@@ -40,6 +40,24 @@ function formatDate(date) {
     return [day,month,year].join('.');
 }
 
+function setDateMinMax() {
+	var now = new Date();
+	var max = now.toISOString().substring(0,10)
+
+	var minDate=new Date()
+	minDate.setDate(minDate.getDate()-14)
+	var min = minDate.toISOString().substring(0,10);
+
+	var inputs = document.getElementsByTagName("input");
+	for (const i of inputs) {
+		if (i.getAttribute("type")!='date')
+			continue;
+
+		i.setAttribute('min', min )
+		i.setAttribute('max', max )
+	}
+}
+
 function AdujstTxtGender(text, word, wordm, wordf) {
 	var checkBoxM = document.getElementById("male");
 	var checkBoxF = document.getElementById("female");
