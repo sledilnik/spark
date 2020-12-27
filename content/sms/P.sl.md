@@ -1,5 +1,6 @@
 ---
 url: /sl/P.html
+smsPrefix: Spark P, covid-spark.info
 questions:
     - text: Prvi simptom sem imel/a
       aftertext: kužen/kužna pa bi lahko bil/a že 2 dneva prej.
