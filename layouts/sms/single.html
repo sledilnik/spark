@@ -1,0 +1,35 @@
+{{ define "title" }}
+{{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+{{ define "main" }}
+{{ $smsBuilder := resources.Get "scripts/sms.js" | js.Build (dict "params" (dict "questions" .Page.Params.questions)) }}
+<main class="sms">
+    <div class="container content">
+        <div class="columns">
+            <div class="column is-10 is-offset-1">
+                <section>
+                    {{ .Content }}
+                </section>
+                <section class="sms-params" id="sms-params">
+                    {{ range $index, $item := .Page.Params.questions }}
+                    <div class="control">
+                        <label class="{{$item.type}}">
+                            <input id="q{{$index}}" type="{{$item.type}}" name="{{$item.name}}">
+                            {{ $item.text | safeHTML }}
+                            {{ if $item.datepicker }}
+                            <input id="date{{$index}}" type="date" min="{{ (now.AddDate 0 0 -14).Format "2006-01-02" }}" max="{{ now.Format "2006-01-02" }}" value="{{ now.Format "2006-01-02" }}">
+                            {{ end }}
+                        </label>
+                    </div>
+                    {{ end }}
+                </section>
+                <section class="sms-preview">
+                    <div id="sms-text"></div>
+                    <a class="button" href="#">Poslji SMS<i class="fa fa-envelope"></i></a>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+<script type="text/javascript" src="{{ $smsBuilder.RelPermalink }}" defer></script>
+{{ end }}

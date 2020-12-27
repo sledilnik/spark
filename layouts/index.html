@@ -1,0 +1,81 @@
+{{ define "main" }}
+{{ $home := .Site.GetPage "landing" }}
+<main class="home">
+    <div class="container content">
+        <div class="columns">
+            <div class="column is-10 is-offset-1">
+                <div class="alert">
+                    <b><a href="share.html"><i class="fa fa-envelope"></i> Želim razširiti Covid-SPARK <i
+                                class="fa fa-envelope"></i></a></b>
+                    <span class="closebtn c" onclick="this.parentElement.style.display='none';">&times;</span>
+                </div>
+
+
+                {{ with $home.Resources.GetMatch "intro.*" }}
+                <section class="intro content">
+                    {{ .Content }}
+                    <div class="sparkImg">
+                        <img src="/img/spark-illustration.png" alt="Ilustracija SPARK">
+                    </div>
+                </section>
+                {{ end }}
+
+
+                {{ with $home.Resources.GetMatch "sparks.*" }}
+                <section class="sparks content">
+                    {{ .Content }}
+                    {{ with $home.Resources.Match "sparks/*" }}
+                    {{ range . }}
+                    <details {{ with .Params.class -}}class="{{ . }}" {{- end -}}>
+                        <summary>
+                            {{ .Params.summary | .RenderString }}
+                        </summary>
+                        <div class="action">
+                            {{ .Content }}
+                        </div>
+                    </details>
+                    {{ end }}
+                    {{ end }}
+                    <div class="thanks">
+                        <p>Hvala, ker sodeluješ v skupnem boju proti virusu SARS-CoV-2!</p>
+                    </div>
+                </section>
+                {{ end }}
+
+
+                {{ with $home.Resources.GetMatch "what-is-spark*" }}
+                <section class="what-is-spark content">
+                    {{ .Content }}
+                    {{ with $home.Resources.Match "cols/col-*.md" }}
+                    <div class="columns">
+                        {{ range . }}
+                        <div class="column content">
+                            {{ .Content }}
+                        </div>
+                        {{ end }}
+                    </div>
+                    <div class="columns images is-hidden-mobile">
+                        <div class="column">
+                            <img src="/img/covid.png" alt="COVID-19">
+                        </div>
+                        <div class="column">
+                            <img class="sms" src="/img/sms.png" alt="SMS">
+                        </div>
+                        <div class="column">
+                            <img src="/img/friends.png" alt="Prijatelji">
+                        </div>
+                    </div>
+                    {{ end }}
+                </section>
+                {{ end }}
+
+                {{ with $home.Resources.GetMatch "disclaimer*" }}
+                <section class="disclaimer content">
+                    {{ .Content }}
+                </section>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</main>
+{{ end }}

@@ -1,0 +1,24 @@
+baseURL: https://covid-spark.info/
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+languageCode: sl
+title: SPARK
+disableKinds:
+  - categories
+  - tags
+defaultContentLanguage: sl
+params:
+  siteVersion: 1.1
+languages:
+  sl:
+    params:
+      version: Verzija
+    title: SPARK
+    weight: 1
+  en:
+    params:
+      version: Version
+    title: SPARK (English)
+    weight: 2

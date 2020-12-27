@@ -1,0 +1,9 @@
+{{ define "main" }}
+<ul>
+  {{ range .Pages }}
+  <article>
+    <li>{{ .Content }}</li>
+  </article>
+  {{ end }}
+</ul>
+{{ end }}

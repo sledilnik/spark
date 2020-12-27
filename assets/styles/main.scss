@@ -1,0 +1,129 @@
+// @see: https://versions.bulma.io/0.7.0/documentation/overview/customize/
+// 1. Import the initial variables
+@import "node_modules/bulma/sass/utilities/initial-variables";
+@import "node_modules/bulma/sass/utilities/functions";
+
+// 2. Set your own initial variables
+$spark-green: #1abc9c;
+$spark-grey: #ddd;
+
+// 3. Set the derived variables
+$link: $spark-green;
+
+// 4. Setup your Custom Colors
+
+// 5. Add new color variables to the color map.
+@import "node_modules/bulma/sass/utilities/derived-variables";
+
+@import "node_modules/bulma/bulma.sass";
+
+// custom classes
+footer {
+  background-color: $spark-grey;
+  padding: 60px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+main {
+  margin-top: 50px;
+}
+
+@mixin spark-collapsable($color) {
+  position: relative;
+  &::first-letter {
+    font-size: 2em;
+    text-transform: collapsable;
+    color: #{$color};
+  }
+}
+
+.home {
+  section {
+    &.sparks {
+      details {
+        margin: 0 0 2px 0;
+        padding: 5px auto;
+
+        
+        &[open] {
+          summary::after {
+            // rotate open icon
+            transform: rotate(90deg);
+            transition-duration: 0.3s;
+          }
+        }
+
+        summary {
+          display: block; // required, otherwise cannot hide stock markers
+          background-color: lighten($spark-grey, 8%);
+          height: 4em;
+          line-height: 2em;
+          padding: 1em 1em 0 1em;
+
+          &:hover {
+            background-color: $spark-grey;
+          }
+
+          // hide stock open marker
+          &::marker,
+          &::-webkit-details-marker {
+            display: none;
+          }
+          // custom open marker
+          &::after {
+            content: "▷";
+            position: absolute;
+            right: 1em;
+            top: 0.9em;
+            transition-duration: 0.3s;
+            font-size: 1.2em;
+          }
+        }
+
+        .action {
+          background-color: transparent;
+          border: 1px solid $spark-grey;
+          padding: 1em;
+        }
+
+        &.spark-s > summary {
+          @include spark-collapsable(#3b64ad);
+        }
+        &.spark-p > summary {
+          @include spark-collapsable(#a83c55);
+        }
+        &.spark-a > summary {
+          @include spark-collapsable(#953caa);
+        }
+        &.spark-r > summary {
+          @include spark-collapsable(#ad865c);
+        }
+        &.spark-k > summary {
+          @include spark-collapsable(#4b684b);
+        }
+      }
+
+      .thanks {
+        margin-top: 1em;
+      }
+    }
+
+    &.what-is-spark {
+      .column {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      img {
+        margin: 0 auto;
+        max-width: 50%;
+      }
+    }
+
+    &.disclaimer {
+      text-align: center;
+    }
+  }
+}
