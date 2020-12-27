@@ -1,13 +1,7 @@
 ---
 url: /sl/S.html
 title: Spark S
-inputs:
-    - text: zoki
-      type: checkbox
-      name: s1
-    - text: boki
-      type: checkbox
-      name: s2
+scenario: s
 ---
 # Spark S
 

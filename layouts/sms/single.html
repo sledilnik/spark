@@ -2,7 +2,7 @@
 {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 {{ define "main" }}
-{{ $smsBuilder := resources.Get "scripts/sms.js" | js.Build (dict "params" (dict "questions" .Page.Params.questions)) }}
+{{ $scenario := resources.Get "scripts/scenarios.js" | resources.ExecuteAsTemplate (printf "%s/js/script.js" .Lang ) . | js.Build | resources.Minify | fingerprint }}
 <main class="sms">
     <div class="container content">
         <div class="columns">
@@ -14,6 +14,7 @@
                     {{/* JS will render questions here */}}
                 </section>
                 <section class="sms-preview">
+                    <h1>Predogled sporocila</h1>
                     <div id="sms-text"></div>
                     <a id="sms-btn" class="button" href="#">Poslji SMS<i class="fa fa-envelope"></i></a>
                 </section>
@@ -21,5 +22,8 @@
         </div>
     </div>
 </main>
-<script type="text/javascript" src="{{ $smsBuilder.RelPermalink }}" defer></script>
+<script type="text/javascript" src="{{ $scenario.RelPermalink }}"></script>
+<script>
+    new SmsBuilder({{ .Page.Params.scenario }})
+</script>
 {{ end }}

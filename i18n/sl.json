@@ -1,5 +1,9 @@
 [
     {
+        "id": "dateFormat",
+        "translation": "dd. MM. yyyy"
+    },
+    {
         "id": "version",
         "translation": "Verzija"
     },

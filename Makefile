@@ -14,7 +14,7 @@ run:
 	docker run --rm -u $(UID) -p$(PORT):1313 -it -v $(CURDIR):/src $(IMAGE) server -D --debug
 
 clean:
-	rm -rf node_modules public resources/_gen
+	rm -rf public resources/_gen
 
 yarn.lock: node_modules package.json
 	docker run --rm -u $(UID) -it -v $(CURDIR):/src --entrypoint /usr/bin/yarn $(IMAGE) install
