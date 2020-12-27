@@ -1,6 +1,6 @@
 # spark
 
-## About 
+## About
 
 TODO: add description
 
