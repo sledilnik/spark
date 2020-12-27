@@ -12,6 +12,11 @@ Site is build tusing static page generator [HUGO](https://gohugo.io). Because si
 
 Provided makefile will run HUGO server in Docker, so nothing needs to be installed on system (except for Docker). It is also possible to install HUGO on system, see [instructions](https://gohugo.io/getting-started/installing)
 
+```
+yarn
+make run
+```
+
 
 ### Organization
 
