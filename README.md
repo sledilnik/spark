@@ -6,7 +6,7 @@ TODO: add description
 
 ## Development
 
-Site is build tusing static page generator [HUGO](https://gohugo.io). Because site is not typical blog, there are some tricks. It uses a lot of `url` params in front matter, so pretty much all URLs are custom. Besides HUGO, yarn is needed to install dependencies.
+Site is build tusing static page generator [HUGO](https://gohugo.io). Because site is not typical blog, there are some tricks. It uses a lot of `url` params in front matter, so pretty much all URLs are custom. If you use included Makefile, everything is run inside docker so no external dependencies are needed.
 
 ### Running development server
 
