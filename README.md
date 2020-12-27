@@ -51,7 +51,7 @@ make run
 
 ## Translations
 
-Content pages (files under `/content` folder) are translated by extension.
+Content pages (files under `/content` folder) are translated by extension. Shorter strings located in `/layout` folder are translated using files inside `/i18n` folder.
 
 ## Deployment
 
