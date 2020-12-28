@@ -14,12 +14,14 @@ params:
 languages:
   sl:
     params:
+      linkSledilnik: https://covid-19.sledilnik.org/sl
       version: Verzija
     title: SPARK
     weight: 1
     languageName: Slovenščina
   en:
     params:
+      linkSledilnik: https://covid-19.sledilnik.org/en
       version: Version
     title: SPARK (English)
     weight: 2
