@@ -10,5 +10,17 @@
     {
         "id": "projectBy",
         "translation": "Project by"
+    },
+    {
+        "id": "navbarMotivation",
+        "translation": "Why?"
+    },
+    {
+        "id": "navbarFAQ",
+        "translation": "FAQ"
+    },
+    {
+        "id": "navbarContact",
+        "translation": "Contact"
     }
 ]

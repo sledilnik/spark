@@ -12,9 +12,9 @@
             </div>
             <div class="navbar-menu is-active">
                 <div class="navbar-start">
-                    <a class="navbar-item" href="{{ relref . " pages/motivation" }}" class="right">Zakaj?</a>
-                    <a class="navbar-item" href="{{ relref . " pages/faq" }}" class="right">FAQ</a>
-                    <a class="navbar-item" href="{{ relref . " pages/contact" }}" class="right">Kontakt</a>
+                    <a class="navbar-item" href="{{ relref . " pages/motivation" }}" class="right">{{ T "navbarMotivation"}}</a>
+                    <a class="navbar-item" href="{{ relref . " pages/faq" }}" class="right">{{ T "navbarFAQ"}}</a>
+                    <a class="navbar-item" href="{{ relref . " pages/contact" }}" class="right">{{ T "navbarContact"}}</a>
                     {{ range $.Translations }}
                     <a class="navbar-item" href="{{ .Permalink }}" class="right">{{ .Language.LanguageName }}</a>
                     {{ end }}

@@ -10,5 +10,17 @@
     {
         "id": "projectBy",
         "translation": "Projekt ekipe"
+    },
+    {
+        "id": "navbarMotivation",
+        "translation": "Zakaj?"
+    },
+    {
+        "id": "navbarFAQ",
+        "translation": "FAQ"
+    },
+    {
+        "id": "navbarContact",
+        "translation": "Kontakt"
     }
 ]
