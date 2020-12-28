@@ -11,11 +11,13 @@ disableKinds:
 defaultContentLanguage: sl
 params:
   siteVersion: 1.1
+  goDateFormat: "2006-01-02"
 languages:
   sl:
     params:
       linkSledilnik: https://covid-19.sledilnik.org/sl
       version: Verzija
+      goDateFormat: "2. 1. 2006"
     title: SPARK
     weight: 1
     languageName: Slovenščina
@@ -23,6 +25,7 @@ languages:
     params:
       linkSledilnik: https://covid-19.sledilnik.org/en
       version: Version
+      goDateFormat: "1/2/2006"
     title: SPARK (English)
     weight: 2
     languageName: English
