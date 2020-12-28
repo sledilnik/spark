@@ -17,8 +17,9 @@ languages:
       version: Verzija
     title: SPARK
     weight: 1
+    languageName: Slovenščina
   en:
     params:
       version: Version
     title: SPARK (English)
-    weight: 2
+    weight: 2    languageName: English
