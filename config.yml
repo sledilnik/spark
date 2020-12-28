@@ -22,4 +22,5 @@ languages:
     params:
       version: Version
     title: SPARK (English)
-    weight: 2    languageName: English
+    weight: 2
+    languageName: English
