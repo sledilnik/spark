@@ -87,7 +87,6 @@ const scenarios = {
 }
 
 const store = {
-
     state: {},
 
     loadInitialState(id) {
@@ -95,15 +94,7 @@ const store = {
     }
 }
 
-const Question = Vue.component('question', {
-    template: `<li v-if>{{ question.text }}</li>`,
-    props: {
-        'question': Object
-    },
-})
-
-
-const Checkbox = Vue.component('checkbox', {
+Vue.component('checkbox', {
     template: `<input type="checkbox" v-model="selected" />`,
     props: {
         question: Object,
@@ -120,7 +111,7 @@ const Checkbox = Vue.component('checkbox', {
     }
 })
 
-const DatePicker = Vue.component('date-picker', {
+Vue.component('date-picker', {
     template: `<input v-show="question.selected" type="date" :min="min" :max="max" v-model="dateModel"/>`,
     props: {
         daysBack: {
@@ -157,7 +148,7 @@ const DatePicker = Vue.component('date-picker', {
     }
 })
 
-const TabluarQuestion = Vue.component('tabular-question', {
+Vue.component('tabular-question', {
     template: `
     <tr v-if="question.type != 'separator'">
         <td><checkbox :question="question" /></td>
@@ -175,7 +166,20 @@ const TabluarQuestion = Vue.component('tabular-question', {
     },
 })
 
-const Questionare = Vue.component('questionare', {
+Vue.component('inline-question', {
+    template: `
+    <div>
+        <checkbox :question="question" />
+        {{ question.text }}
+        <date-picker :question="question" />
+    </div>
+    `,
+    props: {
+        question: Object,
+    },
+})
+
+Vue.component('questionare', {
     template: `
     <section class="questions">
         <div v-if="state.layout == 'tabular'">
@@ -186,8 +190,7 @@ const Questionare = Vue.component('questionare', {
             </table>
         </div>
         <div v-else>
-            <question v-for="(q, index) in state.questions" :key="index" :question="q" />
-            <date-picker :question="q" />
+            <inline-question v-for="(q, index) in state.questions" :key="index" :question="q" />
         </div>
     </section>
     `,
@@ -198,7 +201,7 @@ const Questionare = Vue.component('questionare', {
     }
 })
 
-const SmsPreview = Vue.component('sms-preview', {
+Vue.component('sms-preview', {
     template: `<div>{{ text }}</div>`,
     computed: {
         text() {
@@ -215,7 +218,7 @@ const SmsPreview = Vue.component('sms-preview', {
     }
 })
 
-const SmsBuilder = Vue.component('sms-builder', {
+Vue.component('sms-builder', {
     template: `
     <div>
         <questionare />
@@ -225,28 +228,11 @@ const SmsBuilder = Vue.component('sms-builder', {
     props: {
         scenario: String
     },
-    data() {
-        return {
-            state: store.state,
-        }
-    },
     beforeMount() {
-        console.log("beforeCreate", this.scenario)
         store.loadInitialState(this.scenario)
     },
-    mounted() {
-        console.log("scenario", this.scenario)
-    }
 })
 
 new Vue({
     el: '#sms-builder',
-    components: {
-        Questionare,
-        SmsPreview,
-        SmsBuilder,
-        Question,
-        DatePicker,
-        Checkbox
-    },
 })
