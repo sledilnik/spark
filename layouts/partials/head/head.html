@@ -1,7 +1,6 @@
 {{ $cssOpts := (dict "outputStyle" "compressed" "includePaths" (slice "node_modules/bulma/sass")) }}
 {{ $cssMain := resources.Get "styles/main.scss" | resources.ToCSS $cssOpts }}
 
-{{ $jsMain := resources.Get "scripts/main.js" }}
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -42,7 +41,7 @@
 <meta name="theme-color" content="#ffffff" />
 
 <link rel="stylesheet" href="{{ $cssMain.RelPermalink }}" />
-<script type="text/javascript" src="{{ $jsMain.RelPermalink }}"></script>
+{{/*  <script type="text/javascript" src="{{ $jsMain.RelPermalink }}"></script>  */}}
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
