@@ -17,10 +17,10 @@ clean:
 	rm -rf public resources/_gen
 
 yarn.lock: node_modules package.json
-	docker run --rm -u $(UID) -it -v $(CURDIR):/src --entrypoint /usr/bin/yarn $(IMAGE) install
+	docker run --rm -u $(UID) -v $(CURDIR):/src --entrypoint /usr/bin/yarn $(IMAGE) install
 
 layouts/partials/i18n/messages.json: i18n/sl.json i18n/en.json
-	docker run --rm -u $(UID) -it -v $(CURDIR):/src --entrypoint /usr/bin/yarn $(IMAGE) js-i18n
+	docker run --rm -u $(UID) -v $(CURDIR):/src --entrypoint /usr/bin/yarn $(IMAGE) js-i18n
 
 node_modules:
 	mkdir -p $@
