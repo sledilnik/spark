@@ -5,6 +5,8 @@ markup:
       unsafe: true
 languageCode: sl
 title: SPARK
+disablePathToLower: false
+enableRobotsTXT: true
 disableKinds:
   - categories
   - tags
