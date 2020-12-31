@@ -8,19 +8,19 @@ PORT ?= 1313
 all: clean build
 
 build: yarn.lock layouts/partials/i18n/messages.json
-	docker run --rm -u $(UID) -v $(CURDIR):/src $(IMAGE) build
+	hugo
 
 run: yarn.lock layouts/partials/i18n/messages.json
-	docker run --rm -u $(UID) -p$(PORT):1313 -v $(CURDIR):/src $(IMAGE) server -D --debug
+	hugo server -D --debug
 
 clean:
 	rm -rf public resources/_gen
 
 yarn.lock: node_modules package.json
-	docker run --rm -u $(UID) -v $(CURDIR):/src --entrypoint /usr/bin/yarn $(IMAGE) install
+	yarn install
 
 layouts/partials/i18n/messages.json: i18n/sl.json i18n/en.json
-	docker run --rm -u $(UID) -v $(CURDIR):/src --entrypoint /usr/bin/yarn $(IMAGE) js-i18n
+	yarn js-i18n
 
 node_modules:
 	mkdir -p $@
