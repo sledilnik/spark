@@ -15,6 +15,7 @@ yarn.lock: node_modules package.json
 	yarn install
 
 layouts/partials/i18n/messages.json: i18n/sl.json i18n/en.json
+	mkdir -p layouts/partials/i18n
 	yarn js-i18n
 
 node_modules:
