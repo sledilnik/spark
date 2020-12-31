@@ -22,5 +22,13 @@
     {
         "id": "navbarContact",
         "translation": "Kontakt"
+    },
+    {
+        "id": "mostCommonSymptoms",
+        "translation": "Najpogostejši simptomi"
+    },
+    {
+        "id": "fever",
+        "translation": "Vročina"
     }
 ]

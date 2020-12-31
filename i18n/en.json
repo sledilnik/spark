@@ -22,5 +22,13 @@
     {
         "id": "navbarContact",
         "translation": "Contact"
+    },
+    {
+        "id": "mostCommonSymptoms",
+        "translation": "Most common simptoms"
+    },
+    {
+        "id": "fever",
+        "translation": "Fever"
     }
 ]

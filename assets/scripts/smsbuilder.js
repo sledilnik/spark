@@ -1,96 +1,44 @@
-// import Vue from 'vue'
 import Vue from 'vue/dist/vue.js';
 import { format } from 'date-fns'
+import VueI18n from 'vue-i18n'
 
 const dateFormat = 'dd. MM. yyyy';
 Vue.config.productionTip = false
-
-const scenarios = {
-    s: {
-        layout: 'tabular',
-        msgPrefix: 'SPARK-S:',
-        questions: [
-            {
-                type: "separator",
-                text: "Najpogostejši simptomi"
-            },
-            {
-                text: 'Vročina',
-            },
-            {
-                text: 'Suh kašelj'
-            },
-            {
-                text: 'Utrujenost'
-            },
-            {
-                type: "separator",
-                text: "Manj pogosti simptomi"
-            },
-            {
-                text: 'Bolečine v mišicah/sklepih'
-            },
-            {
-                text: 'Boleče žrelo'
-            },
-            {
-                text: 'Konjunktivitis'
-            },
-            {
-                text: 'Glavobol'
-            },
-            {
-                text: 'Izguba okusa/vonja'
-            },
-            {
-                text: 'Srbečica/razbarvanost prstov'
-            },
-            {
-                type: "separator",
-                text: "Resni simptomi"
-            },
-            {
-                text: 'Težave pri dihanju/izguba sape'
-            },
-            {
-                text: 'Bolečina/pritisk v prsih'
-            },
-            {
-                text: 'Izguba zmožnosti govora/premikanja'
-            },
-        ]
-    },
-    p: {
-        layout: 'inline',
-        questions: [
-            {
-                text: 'Prvi simptom sem imel/a DATE, kužen/kužna pa bi lahko bil/a že 2 dneva prej.'
-            },
-            {
-                text: 'Nimam simptomov, a mislim, da sem se okužil/a DATE, 3 dni po tem pa bi lahko bil/a kužen/kužna.'
-            },
-            {
-                text: 'Nimam simptomov in ne vem, kdaj sem se okužil/a. (Če boš naknadno zaznal/a simptome, to sporoči svojim kontaktom s »Spark S, covid-spark.info« .)'
-            },
-        ]
-
-    },
-    a: {
-        layout: 'inline',
-    },
-    r: {
-        layout: 'inline',
-    },
-    n: {
-        layout: 'inline',
-    }
-}
+Vue.use(VueI18n)
 
 const store = {
     state: {},
 
     loadInitialState(id) {
-        this.state = Object.assign({}, scenarios[id])
+        Object.assign(this.state, scenarios[id])
+    },
+
+    /**
+     * Renders single question text (with user's date)
+     * @param Question q 
+     */
+    renderQuestion(q) {
+        if (q.text.indexOf('<date-picker>') != -1) {
+            return q.text.replace('<date-picker> ', format(new Date(q.date), dateFormat))
+        } else {
+            return `${q.text} (${format(new Date(q.date), dateFormat)})`
+        }
+    },
+
+    /**
+     * Renders message body (according to user's answers)
+     */
+    renderSMSBody() {
+        return this.state.questions.filter(q => q.selected && q.date != null).map(q => {
+            return store.renderQuestion(q)
+        }).join(', ').trim()
+    },
+
+    /**
+     * Renders whole message with prefix
+     */
+    renderSMS() {
+        return `${this.state.msgPrefix} ${this.renderSMSBody()}`
     }
 }
 
@@ -112,13 +60,31 @@ Vue.component('checkbox', {
 })
 
 Vue.component('date-picker', {
-    template: `<input v-show="question.selected" type="date" :min="min" :max="max" v-model="dateModel"/>`,
+    render(createElement) {
+        return createElement('input', {
+            style: {
+                display: this.show ? 'inline' : 'none'
+            },
+            attrs: {
+                type: 'date',
+                min: this.min,
+                max: this.max
+            },
+            domProps: {
+                value: this.dateModel
+            }
+        })
+    },
     props: {
         daysBack: {
             type: Number,
             default: 14
         },
         question: Object,
+        alwaysShow: {
+            type: Boolean,
+            default: true
+        }
     },
     computed: {
         dateModel: {
@@ -128,6 +94,9 @@ Vue.component('date-picker', {
             set: function (val) {
                 this.$set(this.question, 'date', val)
             },
+        },
+        show() {
+            return this.alwaysShow || this.question.selected === true
         }
     },
     data() {
@@ -150,13 +119,13 @@ Vue.component('date-picker', {
 
 Vue.component('tabular-question', {
     template: `
-    <tr v-if="question.type != 'separator'">
+    <tr v-if="question.text">
         <td><checkbox :question="question" /></td>
-        <td>{{ question.text }}</td>
-        <td><date-picker :question="question" /></td>
+        <td>{{ $t(question.text) }}</td>
+        <td><date-picker :question="question" :always-show="false" /></td>
     </tr>
     <tr v-else>
-        <td>{{ question.text }}</td>
+        <td>{{ $t(question.title) }}</td>
         <td></td>
         <td></td>
     </tr>
@@ -167,13 +136,42 @@ Vue.component('tabular-question', {
 })
 
 Vue.component('inline-question', {
-    template: `
-    <div>
-        <checkbox :question="question" />
-        {{ question.text }}
-        <date-picker :question="question" />
-    </div>
-    `,
+    render(createElement) {
+
+        const datepicker = createElement('date-picker', { props: { question: this.question } })
+        const translated = this.$t(this.question.text)
+        const parts = translated.split(' ').map((token) => {
+            switch (token) {
+                case '<date-picker>':
+                    return datepicker;
+                default:
+                    return token
+            }
+        }).reduce((acc, el) => {
+            const last = acc.pop() || ''
+            console.log('reducem', acc, el, last)
+
+            if (typeof (last) != typeof (el)) {
+                acc.push(last, el)
+                return acc
+            } else {
+                if (typeof (last) == 'string') {
+                    acc.push(`${last} ${el} `)
+                } else {
+                    acc.push(last, el)
+                }
+                return acc
+            }
+        }, [])
+
+        return createElement(
+            'div',
+            [
+                createElement('checkbox', { props: { question: this.question } }),
+                ...parts
+            ]
+        )
+    },
     props: {
         question: Object,
     },
@@ -205,10 +203,7 @@ Vue.component('sms-preview', {
     template: `<div>{{ text }}</div>`,
     computed: {
         text() {
-            const sb = this.state.questions.filter(q => q.selected && q.date != null).map(q => {
-                return `${q.text} (${format(new Date(q.date), dateFormat)})`
-            }).join(', ')
-            return `${this.state.msgPrefix}: ${sb}`
+            return store.renderSMS()
         }
     },
     data() {
@@ -226,13 +221,33 @@ Vue.component('sms-builder', {
     </div>
     `,
     props: {
-        scenario: String
+        scenario: {
+            type: String,
+            required: true
+        },
+        locale: {
+            type: String,
+            default: 'sl'
+        }
     },
     beforeMount() {
+        this.$i18n.locale = this.locale
         store.loadInitialState(this.scenario)
     },
 })
 
-new Vue({
+console.log(messages)
+
+const i18n = new VueI18n({
+    locale: 'en',
+    fallbackLocale: 'en',
+    messages,
+})
+
+const app = new Vue({
     el: '#sms-builder',
+    props: {
+
+    },
+    i18n,
 })

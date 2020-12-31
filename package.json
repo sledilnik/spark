@@ -5,11 +5,15 @@
   "repository": "git@github.com:sledilnik/spark.git",
   "author": "Andraz Vrhovec <andraz@koofr.net>",
   "license": "MIT",
+  "scripts": {
+    "js-i18n": "node scripts/vue-i18n.js"
+  },
   "dependencies": {
     "bulma": "^0.9.1",
     "date-fns": "^2.16.1",
     "fontawesome": "^5.6.3",
     "lodash": "^4.17.20",
-    "vue": "^2.6.12"
+    "vue": "^2.6.12",
+    "vue-i18n": "^8.22.2"
   }
 }
