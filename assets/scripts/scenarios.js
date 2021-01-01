@@ -10,43 +10,46 @@ const scenarios = {
                 text: 'fever',
             },
             {
-                text: 'Suh kašelj'
+                text: 'dryCough'
             },
             {
-                text: 'Utrujenost'
+                text: 'fatigue'
             },
             {
-                title: "Manj pogosti simptomi"
+                title: "lessCommonSymptoms"
             },
             {
-                text: 'Bolečine v mišicah/sklepih'
+                text: 'muscleJointPain'
             },
             {
-                text: 'Boleče žrelo'
+                text: 'soreThroat'
+            },
+			{
+                text: 'diarrhea'
             },
             {
-                text: 'Konjunktivitis'
+                text: 'conjunctivitis'
             },
             {
-                text: 'Glavobol'
+                text: 'headache'
+            },
+			{
+                text: 'lossTasteSmell'
             },
             {
-                text: 'Izguba okusa/vonja'
+                text: 'skinRash'
             },
             {
-                text: 'Srbečica/razbarvanost prstov'
+                title: "severeSymptoms"
             },
             {
-                title: "Resni simptomi"
+                text: 'shortBreath'
             },
             {
-                text: 'Težave pri dihanju/izguba sape'
+                text: 'chestPain'
             },
             {
-                text: 'Bolečina/pritisk v prsih'
-            },
-            {
-                text: 'Izguba zmožnosti govora/premikanja'
+                text: 'lossSpeechMovement'
             },
         ]
     },
@@ -55,27 +58,59 @@ const scenarios = {
         msgPrefix: 'SPARK-P: ',
         questions: [
             {
-                text: 'Prvi simptom sem imel/a <date-picker> , kužen/kužna pa bi lahko bil/a že 2 dneva prej.'
+                text: 'sparkPQ1'
+                textFemine: 'sparkPQ1Femine'
+                textMasculine: 'sparkPQ1Masculine'
             },
             {
-                text: 'Nimam simptomov, a mislim, da sem se okužil/a <date-picker> , 3 dni po tem pa bi lahko bil/a kužen/kužna.'
+                text: 'sparkPQ2'
+                textFemine: 'sparkPQ2Femine'
+                textMasculine: 'sparkPQ2Masculine'
             },
             {
-                text: 'Nimam simptomov in ne vem, kdaj sem se okužil/a. (Če boš naknadno zaznal/a simptome, to sporoči svojim kontaktom s »Spark S, covid-spark.info« .)'
+                text: 'sparkPQ3'
+                textFemine: 'sparkPQ3Femine'
+                textMasculine: 'sparkPQ3Masculine'
             },
         ]
-
     },
     a: {
+		layout: 'inline',
         msgPrefix: 'SPARK-A: ',
-        layout: 'inline',
+		        questions: [
+            {
+                text: 'sparkAQ1'
+                textFemine: 'sparkAQ1Femine'
+                textMasculine: 'sparkAQ1Masculine'
+            }
+        ]
     },
     r: {
+		layout: 'inline',
         msgPrefix: 'SPARK-R: ',
-        layout: 'inline',
+        questions: [
+            {
+                text: 'sparkRQ1'
+                textFemine: 'sparkRQ1Femine'
+                textMasculine: 'sparkRQ1Masculine'
+            },
+            {
+                text: 'sparkRQ2'
+                textFemine: 'sparkRQ2Femine'
+                textMasculine: 'sparkRQ2Masculine'
+            }
+        ]
     },
     n: {
+		layout: 'inline',
         msgPrefix: 'SPARK-N: ',
-        layout: 'inline',
+        questions: [
+            {
+                text: 'sparkNQ1'
+            },
+            {
+                text: 'sparkNQ2'
+            }
+        ]
     }
 }

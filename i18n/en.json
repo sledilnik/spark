@@ -25,10 +25,138 @@
     },
     {
         "id": "mostCommonSymptoms",
-        "translation": "Most common simptoms"
+        "translation": "The most common symptoms"
     },
     {
         "id": "fever",
         "translation": "Fever"
-    }
+    },
+	{
+        "id": "dryCough",
+        "translation": "Dry cough"
+    },
+    {
+        "id": "fatigue",
+        "translation": "Fatigue"
+    },
+	{
+        "id": "lessCommonSymptoms",
+        "translation": "Less common symptoms"
+    },
+    {
+        "id": "muscleJointPain",
+        "translation": "Muscle or joint pain"
+    },
+	{
+        "id": "soreThroat",
+        "translation": "Sore throat"
+    },
+	{
+        "id": "diarrhea",
+        "translation": "Diarrhea"
+    },
+    {
+        "id": "conjunctivitis",
+        "translation": "Conjunctivitis (also known as red eyes)"
+    },
+	{
+        "id": "headache",
+        "translation": "Headache"
+    },
+    {
+        "id": "lossTasteSmell",
+        "translation": "Loss of taste or smell"
+    },
+	{
+        "id": "skinRash",
+        "translation": "Different types of skin rash"
+    },
+    {
+        "id": "severeSymptoms",
+        "translation": "Symptoms of severe COVID-19 disease"
+    },
+	{
+        "id": "shortBreath",
+        "translation": "Shortness of breath"
+    },
+    {
+        "id": "chestPain",
+        "translation": "Persistent pain or pressure in the chest"
+    },
+	{
+        "id": "lossSpeechMovement",
+        "translation": "Loss of speech or movement"
+    },
+	{
+		"id": "",
+        "translation": ""
+	},
+	{
+		"id": "",
+        "translation": ""
+	},
+	{
+		"id": "",
+        "translation": ""
+	},
+	{
+		"id": "",
+        "translation": ""
+	},
+	{
+		"id": "",
+        "translation": ""
+	},
+	{
+		"id": "",
+        "translation": ""
+	},
+	{
+		"id": "",
+        "translation": ""
+	},
+	{
+		"id": "",
+        "translation": ""
+	},
+	{
+		"id": "sparkPQ1",
+        "translation": "I had the first symptom on <date-picker> , but I could have been infectious 2 days earlier."
+	},
+	{
+		"id": "sparkPQ2",
+        "translation": "I have no symptoms, but I think I became infected on <date-picker> , and 3 days after that I could be infectious."
+	},
+	{
+		"id": "sparkPQ3",
+        "translation": "I have no symptoms and don’t know when I got infected. (If you notice any symptoms later, please send Spark S, covid-spark.info.)"
+	},
+	{
+		"id": "sparkAQ1",
+        "translation": "Date you were in contact with the sender of the Spark R (for the first time) in the last 7 days: <date-picker> "
+	},
+	{
+		"id": "sparkRQ1",
+        "translation": "that I have been in contact with several people who have been symptomatic or positive for SARS-CoV-2 after (choose the date of the earliest symptom of all senders) <date-picker>"
+	},
+	{
+		"id": "sparkRQ2",
+        "translation": "that I was on <date-picker> at a SARS-CoV-2 virus superspreading event"
+	},
+	{
+		"id": "sparkRQ1",
+        "translation": "that I have been in contact with several people who have been symptomatic or positive for SARS-CoV-2 after (choose the date of the earliest symptom of all senders) <date-picker>"
+	},
+	{
+		"id": "sparkRQ2",
+        "translation": "that I was on <date-picker> at a SARS-CoV-2 virus superspreading event"
+	},
+	{
+		"id": "sparkNQ1",
+        "translation": "I tested negative for SARS-CoV-2."
+	},
+	{
+		"id": "sparkNQ2",
+        "translation": "My potential source of infection turned out to be negatively tested."
+	}
 ]
