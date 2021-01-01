@@ -1,1 +1,1 @@
-# Kaj je Covid-SPARK?
+# What is Covid-SPARK?

@@ -1,3 +1,3 @@
-# Preveri in izberi:
+# Check and choose:
 
-Preveri, ali zate velja katera izmed predvidenih situacij. Če velja, sledi navodilom.
+Check to see if any of the situations below apply to you. If they do, follow the instructions.

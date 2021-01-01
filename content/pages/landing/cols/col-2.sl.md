@@ -1,3 +1,3 @@
-**Epidemiološki samonadzor Covid-SPARK je skupek navodil** za odgovorno ravnanje ter iskanje in
-preprečevanje potencialnih prenosov okužbe s SARS-CoV-2. Če s sledenjem priporočilom preprečimo
-nadaljnje širjenje virusa, bomo zavarovali svoje bližnje in olajšali delo epidemiološki službi.
+**Načrt je zasnovan na medsebojni komunikaciji in zaupanju.** Najlažje ga izvajamo kar s kratkimi sporočili SMS 
+vsem osebam, s katerimi smo bili v zadnjem tednu ali dveh v stiku. Nič hudega, če pošljemo kakšno sporočilo preveč, 
+saj bodo lahko tudi naši kontakti sami presodili, ali so bili v preteklih dneh z nami resnično v stiku.

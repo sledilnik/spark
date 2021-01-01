@@ -1,1 +1,1 @@
-[Uporaba spletne strani je anonimna.]()
+[Use of the website is anonymous.]()

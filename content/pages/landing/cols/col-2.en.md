@@ -1,3 +1,2 @@
-**Epidemiološki samonadzor Covid-SPARK je skupek navodil** za odgovorno ravnanje ter iskanje in
-preprečevanje potencialnih prenosov okužbe s SARS-CoV-2. Če s sledenjem priporočilom preprečimo
-nadaljnje širjenje virusa, bomo zavarovali svoje bližnje in olajšali delo epidemiološki službi.
+**The plan is based on mutual communication and trust.** The easiest way to do this is with short 
+text messages to all the people we have been in contact with in the last week or two.
