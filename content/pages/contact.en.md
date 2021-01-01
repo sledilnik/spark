@@ -5,6 +5,6 @@ url: /en/contact.html
 
 # Contact
 
-Projekt Covid-SPARK za boj proti virusu SARS-CoV-2 je razvila in podprla skupnost Sledilnik.
+To combat the SARS-CoV-2 virus the Covid-SPARK project was developed and supported by the Sledilnik community.
 
-Vprašanja in predloge lahko pošljete na: info@covid-spark.info ali info@sledilnik.org
+Send questions and suggestions to: info@covid-spark.info or info@sledilnik.org

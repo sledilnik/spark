@@ -3,28 +3,28 @@ title: "Pages"
 url: /en/simptoms.html
 ---
 
-# Za COVID-19 značilni simptomi
+# The symptoms of COVID-19
 
-## Najpogostejši simptomi:
+## The most common symptoms:
 
-* vročina
-* suh kašelj
-* utrujenost
-
-
-## Manj pogosti simptomi:
-
-* bolečine v mišicah ali sklepih
-* boleče žrelo
-* driska
-* konjunktivitis
-* glavobol
-* izguba okusa ali vonja
-* srbečica ali razbarvanost prstov
+* Fever,
+* Dry cough,
+* Fatigue.
 
 
-## Resni simptomi:
+## Less common symptoms:
 
-* težave pri dihanju ali izguba sape
-* bolečina ali pritisk v prsih
-* izguba zmožnosti govora ali premikanja
+* Muscle or joint pain,
+* Sore throat
+* Diarrhea,
+* Conjunctivitis (also known as red eyes)
+* Headache,
+* Loss of taste or smell,
+* Different types of skin rash.
+
+
+## Symptoms of severe COVID-19 disease:
+
+* Shortness of breath,
+* Persistent pain or pressure in the chest,
+* Loss of speech or movement.

@@ -2,6 +2,6 @@
 title: "Pages"
 url: /en/share.html
 ---
-# share neki neki
+# "Sharing is caring"
 
-sharam
+I would like to share the Covid-SPARK website via SMS with my family members, friends, colleagues, acquaintances, ...

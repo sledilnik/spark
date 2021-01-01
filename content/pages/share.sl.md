@@ -2,6 +2,6 @@
 title: "Pages"
 url: /sl/share.html
 ---
-# share neki neki
+# "Sharing is caring"
 
-sharam
+Spletni portal Covid-SPARK želim preko sporočila SMS deliti s svojimi družinskimi člani, prijatelji, sodelavci, znanci, ...

@@ -5,9 +5,9 @@ url: /en/motivation.html
 
 # Why Covid-SPARK?
 
-1. **Dostopnost:** znana, enostavna in razširjena tehnologija, ki je dostopna praktično vsem, tudi starejšim.
-2. **Preprostost:** kratka in razumljiva navodila za enostavno ukrepanje.
-3. **Decentralizacija:** transparenten sistem, ki ni institucionaliziran, temveč temelji zgolj na medosebni komunikaciji.
-4. **Preventivno iskanje kontaktov:** obveščanje o možnosti prenosa virusa med tesnimi kontakti.
-5. **Retrospektivno iskanje kontaktov:** skupaj kot omrežje ljudi lahko kolektivno odkrijemo izvore okužb. Če se osebe, ki bi lahko bile izvori okužb, skozi naša sporočila prepoznajo, lahko tudi one z uporabo Covid-SPARK nadaljujejo verigo iskanja in obveščanja kontaktov.
-6. **Komplementarnost:** sistem ni nadomestilo uradnemu epidemiološkemu sledenju ali aplikaciji #OstaniZdrav, ampak predstavlja dodaten nivo komunikacije, znotraj katerega lahko posamezniki v socialnem omrežju sami izvedemo znaten del iskanja tesnih kontaktov. Največji učinek dosežemo, če epidemiološki samonadzor Covid-SPARK služi kot najbolj osnoven in zgoden nivo opozarjanja, temu pa sledijo višji, uradni nivoji preprečevanja širitve virusa: testiranje, epidemiološko sledenje NIJZ in obveščanje neznanih kontaktov preko aplikacije #OstaniZdrav.
+1. **Accessibility:** known, simple and widespread technology that is accessible to practically everyone, including the elderly.
+2. **Simplicity:** short and clear instructions for easy action.
+3. **Decentralization:** a transparent system that is not institutionalized but based solely on interpersonal communication.
+4. **Forward contact tracing:** notification of the possibility of virus transmission between close contacts.
+5. **Backward contact tracing:** together as a network of people, we can collectively search for sources of infections. If people who could be the source of infections are identified through our messages, they can also continue the chain of finding and informing contacts using Covid-SPARK.
+6. **Complementarity:** the system is not a substitute for official epidemiological surveillance or the #OstaniZdrav app, but represents an additional level of communication within which individuals in the social network can perform a significant part of the search for close contacts on their own. The most effective results may be achieved if Covid-SPARK serves as the most basic and early level of warning, followed by official preventive measures such as: testing, offical epidemiological contact tracing and notification of unknown contacts via the #OstaniZdrav app.
