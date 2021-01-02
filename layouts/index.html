@@ -25,11 +25,11 @@
                     {{ .Content }}
                     {{ with $home.Resources.Match "sparks/*" }}
                     {{ range . }}
-                    <details {{ with .Params.class -}}class="{{ . }}" {{- end -}}>
+                    <details class="collapsable {{ with .Params.class -}}{{ . }}{{- end -}}">
                         <summary>
                             {{ .Params.summary | .RenderString }}
                         </summary>
-                        <div class="action">
+                        <div class="details-body">
                             {{ .Content }}
                         </div>
                     </details>

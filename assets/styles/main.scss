@@ -17,7 +17,6 @@ $link: $spark-green;
 
 @import "bulma/bulma.sass";
 
-
 // additional styles
 @import "bulma-checkradio/src/sass";
 
@@ -25,17 +24,19 @@ $fa-font-path: "../webfonts";
 @import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "@fortawesome/fontawesome-free/scss/solid.scss";
 
-// custom classes
-footer {
-  background-color: $spark-grey;
-  padding: 60px;
-  margin-top: 30px;
-  text-align: center;
+html,
+body {
+    min-height: calc(100vh - 52px);
+    display: flex;
+    flex-direction: column;
 }
 
-// main {
-//   margin-top: 50px;
-// }
+// custom classes
+body > footer {
+  background-color: $spark-grey;
+  margin-top: auto;
+  padding-top: 30px;
+}
 
 @mixin spark-collapsable($color) {
   position: relative;
@@ -46,52 +47,64 @@ footer {
   }
 }
 
+details.collapsable {
+  margin: 0 0 2px 0;
+  padding: 5px auto;
+
+  &[open] {
+    summary::after {
+      // rotate open icon
+      transform: rotate(90deg);
+      transition-duration: 0.3s;
+    }
+  }
+
+  summary {
+    display: block; // required, otherwise cannot hide stock markers
+    position: relative;
+    min-height: 4em;
+    line-height: 2em;
+    padding: 1em 1em 0 1em;
+
+  
+    // hide stock open marker
+    &::marker,
+    &::-webkit-details-marker {
+      display: none;
+    }
+    // custom open marker
+    &::after {
+      content: "▷";
+      position: absolute;
+      right: 1em;
+      top: 0.9em;
+      transition-duration: 0.3s;
+      font-size: 1.2em;
+    }
+  }
+
+  .details-body {
+    padding: 1em;
+  }
+}
+
 .home {
   section {
     &.sparks {
       details {
-        margin: 0 0 2px 0;
-        padding: 5px auto;
-
-        &[open] {
-          summary::after {
-            // rotate open icon
-            transform: rotate(90deg);
-            transition-duration: 0.3s;
-          }
-        }
-
         summary {
-          display: block; // required, otherwise cannot hide stock markers
           background-color: lighten($spark-grey, 8%);
-          height: 4em;
-          line-height: 2em;
-          padding: 1em 1em 0 1em;
 
           &:hover {
             background-color: $spark-grey;
           }
-
-          // hide stock open marker
-          &::marker,
-          &::-webkit-details-marker {
-            display: none;
-          }
-          // custom open marker
-          &::after {
-            content: "▷";
-            position: absolute;
-            right: 1em;
-            top: 0.9em;
-            transition-duration: 0.3s;
-            font-size: 1.2em;
-          }
         }
 
-        .action {
+        
+
+        .details-body {
           background-color: transparent;
           border: 1px solid $spark-grey;
-          padding: 1em;
         }
 
         &.spark-s > summary {
@@ -145,6 +158,19 @@ footer {
       list-style: none;
       margin: 0;
       padding: 0;
+    }
+  }
+}
+
+.faq {
+  details.collapsable {
+    summary {
+      border-bottom: 1px solid $spark-grey;
+      font-weight: 600;
+    }
+
+    &[open] {
+      border-bottom: 1px solid $spark-grey;
     }
   }
 }

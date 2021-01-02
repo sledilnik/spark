@@ -3,7 +3,7 @@
 {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 {{ define "main" }}
-<main>
+<main {{ with .Page.Params.class }}class="{{ . }}"{{ end }}>
   <div class="container content">
     <div class="columns">
       <div class="column is-10 is-offset-1">
