@@ -218,12 +218,10 @@ Vue.component('sms-preview', {
             <label class="checkbox" for="control-special-chars">{{ $t('useSpecialCharacters') }}</label>
         </div>
     </div>
-    <div class="level">
-        <div class="level-item message-container">
-            <article class="message">
-                <div class="message-header">{{ $t('smsPreview') }}</div>
-                <div class="message-body">{{ text }}</div>
-            </article>
+    <div class="level is-align-items-center">
+        <div class="message">
+            <div class="message-header">{{ $t('smsPreview') }}</div>
+            <div class="message-body">{{ text }}</div>
         </div>
     </div>
     <div class="level">
@@ -234,8 +232,7 @@ Vue.component('sms-preview', {
     <div class="level">
         <div class="level-item is-hidden-mobile">
             <vue-qrcode :value="smsLink" />
-        <div>
-    </div>
+        </div>
     </div>
     </div>
     `,

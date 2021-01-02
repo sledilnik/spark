@@ -128,11 +128,11 @@
         "translation": "da sem bil/a v stiku z več osebami, ki so se po (navedi čas najzgodnešega simptoma izmed vseh pošiljateljev) <date-picker> izkazale za simptomatične ali pozitivne na SARS-CoV-2"
     },
     {
-        "id": "sparkRQ1Femine",
+        "id": "sparkRQ1Masculine",
         "translation": "da sem bil v stiku z več osebami, ki so se po (navedi čas najzgodnešega simptoma izmed vseh pošiljateljev) <date-picker> izkazale za simptomatične ali pozitivne na SARS-CoV-2"
     },
     {
-        "id": "sparkRQ1Masculine",
+        "id": "sparkRQ1Femine",
         "translation": "da sem bila v stiku z več osebami, ki so se po (navedi čas najzgodnešega simptoma izmed vseh pošiljateljev) <date-picker> izkazale za simptomatične ali pozitivne na SARS-CoV-2"
     },
     {
@@ -140,11 +140,11 @@
         "translation": "da sem bil/a <date-picker> na dogodku superširjenja virusa SARS-CoV-2"
     },
     {
-        "id": "sparkRQ2Femine",
+        "id": "sparkRQ2Masculine",
         "translation": "da sem bil <date-picker> na dogodku superširjenja virusa SARS-CoV-2"
     },
     {
-        "id": "sparkRQ2Masculine",
+        "id": "sparkRQ2Femine",
         "translation": "da sem bila <date-picker> na dogodku superširjenja virusa SARS-CoV-2"
     },
     {
