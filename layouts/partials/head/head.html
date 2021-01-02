@@ -1,5 +1,5 @@
 {{ $cssOpts := (dict "outputStyle" "compressed" "includePaths" (slice "node_modules")) }}
-{{ $cssMain := resources.Get "styles/main.scss" | resources.ToCSS $cssOpts }}
+{{ $cssMain := resources.Get "styles/main.scss" | resources.ToCSS $cssOpts | fingerprint }}
 
 {{ $jsOpts := dict "defines" (dict "process.env.NODE_ENV" `"development"`) "sourcemap" "inline" }}
 {{ $bulma := resources.Get "scripts/bulma.js" | js.Build $jsOpts | fingerprint }}
