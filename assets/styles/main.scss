@@ -92,7 +92,7 @@ details.collapsable {
       details {
         summary {
           background-color: lighten($spark-grey, 8%);
-          
+
           &:hover {
             background-color: $spark-grey;
           }
@@ -156,6 +156,19 @@ details.collapsable {
       list-style: none;
       margin: 0;
       padding: 0;
+    }
+  }
+}
+
+.faq {
+  details.collapsable {
+    summary {
+      border-bottom: 1px solid $spark-grey;
+      font-weight: 600;
+    }
+
+    &[open] {
+      border-bottom: 1px solid $spark-grey;
     }
   }
 }
