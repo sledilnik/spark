@@ -170,5 +170,17 @@
     {
         "id": "spreadSparks",
         "translation": "Želim razširiti Covid-SPARK"
+    },
+    {
+        "id": "thankYou",
+        "translation": "Hvala, ker sodeluješ v skupnem boju proti virusu SARS-CoV-2!"
+    },
+    {
+        "id": "smsPreview",
+        "translation": "Predogled SMS-a"
+    },
+    {
+        "id": "sendSMSBtn",
+        "translation": "Pošlji SMS"
     }
 ]

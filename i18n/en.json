@@ -150,5 +150,17 @@
     {
         "id": "spreadSparks",
         "translation": "I want to spread the word about Covid-SPARK"
+    },
+    {
+        "id": "thankYou",
+        "translation": "Thank you for participating in the fight against the SARS-CoV-2 virus!"
+    },
+    {
+        "id": "smsPreview",
+        "translation": "SMS Preview"
+    },
+    {
+        "id": "sendSMSBtn",
+        "translation": "Send SMS"
     }
 ]
