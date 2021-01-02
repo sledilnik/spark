@@ -24,17 +24,19 @@ $fa-font-path: "../webfonts";
 @import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "@fortawesome/fontawesome-free/scss/solid.scss";
 
-// custom classes
-footer {
-  background-color: $spark-grey;
-  padding: 60px;
-  margin-top: 30px;
-  text-align: center;
+html,
+body {
+    min-height: calc(100vh - 52px);
+    display: flex;
+    flex-direction: column;
 }
 
-// main {
-//   margin-top: 50px;
-// }
+// custom classes
+body > footer {
+  background-color: $spark-grey;
+  margin-top: auto;
+  padding-top: 30px;
+}
 
 @mixin spark-collapsable($color) {
   position: relative;
