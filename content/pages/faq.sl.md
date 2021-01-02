@@ -36,7 +36,7 @@ V primeru opisanega scenarija gre zelo verjetno za dogodek superširjenja. Za za
 {{% /faq %}}
 
 {{% faq id="faq-spark-a-after-r" question="Prejel sem sporočilo Spark R, nato pa še sporočilo Spark A od oseb, s katerimi sem bil v stiku v zadnjem tednu. Kako naj ravnam?" %}}
-Bolj pomembno je sporočilo Spark R, saj pomeni, da si morda asimptomatični prenašalec. Zate sta važna dva koraka: da se samoizoliraš in da obvestiš svoje kontakte s {{< sms_link A >}}  (glej „Asimptomatična okužba“ na vrhu strani).
+Bolj pomembno je sporočilo Spark R, saj pomeni, da si morda asimptomatični prenašalec. Zate sta važna dva koraka: da se samoizoliraš in da obvestiš svoje kontakte s {{< sms_link A >}}  (glej [„Asimptomatična okužba“](index.html)).
 {{% /faq %}}
 
 {{% faq id="fag-stigma" question="Skrbi me stigmatizacija zaradi okužbe s SARS-CoV-2." %}}

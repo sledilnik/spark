@@ -17,50 +17,51 @@ The templates on the website are intended to simplify the submission process, wh
 
 {{% faq id="faq-self-isolation" question="I'm in self-isolation. I received a Spark N message from an acquaintance I was in contact with recently. What shall I do?" %}}
 Pošiljatelj s sporočilom Spark N sporoča, da je rezultat njegovega testa na SARS-CoV-2 negativen ali pa, da je negativen rezultat testa njegovega kontakta, ki se je poprej javil kot možen superprenašalec. Vsa predhodna sporočila Spark, prejeta od tega pošiljatelja, lahko tako ignoriraš. Če od stika z omenjenim pošiljateljem nisi imel/a stikov z drugimi osebami, ki bi lahko bile povezane z okužbo z novim koronavirusom, in si še vedno zdrav/a, lahko svojo samoizolacijo predčasno prekineš.
+With the Spark N message the sender reported that he/she tested negative for SARS-CoV-2 or his/her contact, which previously appeared as a possible superspreader, tested negative. All previous Spark messages received from this sender may thus be ignored. If you have not had contact with other people who may have been associated with a new coronavirus infection and you are still healthy, you can end your self-isolation prematurely.
 
-*A pozor*, testi niso 100 % zanesljivi in so včasih tudi lažno negativni, zato previdnost pri stikih ne bo odveč še nekaj dni.
+**Beware:** tests are not 100% reliable and are sometimes false negative, so caution in your daily activities is still recommended for a few more days.
 {{% /faq %}}
 
-{{% faq id="faq-my-child" question="Moj otrok je od vrstnika prejel sporočilo Spark, za katero sumim, da je lažno. Kako naj ukrepam?" %}}
-Ob sumu na lažno sporočilo, ki je lahko le plod otroške nagajivosti, stopite v stik s starši otroka in se prepričajte o verodostojnosti sporočila. Če gre za otrokovega sošolca ali sošolko, bosta ob relevantnem sporočilu z vami v stik najverjetneje stopila tudi šola in epidemiolog NIJZ z navodili za nadaljnje ukrepanje.
+{{% faq id="faq-my-child" question="My child received a Spark message from a peer that I suspect is fake. May we ignore this message?" %}}
+If you suspect that your chield recieved a fake message, which may be the result of a child's playfulness, contact the child's parents and make sure the message is authentic. If it is your child's classmate, the school and an epidemiologist will most likely also contact you with instructions for further action.
 {{% /faq %}}
 
-{{% faq id="faq-spark-r" question="Oseba mi je poslala sporočilo Spark R. Z njo sem bil v stiku na dogodku, kjer je prišlo do mnogo tesnih stikov, kar bi lahko vodilo v superširjenje virusa. Ali naj vsem udeleženim v dogodku pošljem sporočilo Spark A?" %}}
-Oseba, ki ti je poslala sporočilo Spark R, je morda superprenašalec in je lahko okužila tudi tebe. Sporočilo {{< sms_link A >}} zato pošlji *vsem* udeleženim v dogodku kot tudi vsem tistim, s katerimi si prišel v stik po dogodku. Posebej pomembno je, da obvestiš tudi slednje, saj si morda postal nov izvor potencialne okužbe in virus že razširil v svoje socialne kroge.
+{{% faq id="faq-spark-r" question="I received a Spark R message. I was in contact with the sender at the event where there was a lot of close contacts, which could lead to a superspreading event. Should I send a Spark A message to everyone involved in the event?" %}}
+The sender may be a superspreader and may have infected you as well. Therefore, send the message {{<sms_link A>}} to *all* participants in the event as well as all those you came in contact with after the event. It is especially important to inform the latter as well, as you may have become a new source of potential infection and have already spread the virus to your social bubbles.
 
 Nekatere osebe, ki so bile skupaj s tabo udeležene v omenjenem dogodku, bodo verjetno obveščene večkrat; nič hudega, saj se bodo tako še toliko lažje odločile za samoizolacijo. Če pa oseba, ki je poslala sporočilo Spark R, ni obvestila vseh oseb z dogodka, bodisi ker nima vseh telefonskih kontaktov ali je na koga pozabila, boš s svojim sporočilom odigral/a pomembno vlogo pri prekinitvi možne širitve virusa. Pri osebi, ki ti je poslala sporočilo Spark R, lahko preveriš, ali ji je uspelo obvestiti vse udeležene v dogodku, in ji po potrebi posreduješ manjkajoče telefonske kontakte.
+Some of the people who attended this event with you are likely to be notified more than once; no big deal, as this will make it even easier for them to decide for a self-isolation. However, if the person who sent the Spark R message did not notify all of the people in the event, either because he/she does not have all the phone contacts or forgot about someone, your message will play an important role in stopping the possible spread of the virus. You can check with the sender of Spark R message to see if he/she was able to notify everyone involved in the event. Otherwise, you can provide the sender with the missing phone contacts, if necessary.
 {{% /faq %}}
 
-{{% faq id="faq-who-is-the-source" question="Po skupnem dogodku, na delovnem mestu, ipd. je več prisotnih dobilo simptome, značilne za COVID-19, ali pa so imeli ob testiranju na SARS-CoV-2 pozitiven rezultat. Vsi ostali prisotni smo od njih prejeli sporočila Spark in se prepoznali pod točko „Razvejana okužba“. Kdo je vir razvejane okužbe in kdo naj obvesti svoje kontakte s ključno besedo Spark R?" %}}
-V primeru opisanega scenarija gre zelo verjetno za dogodek superširjenja. Za zamejitev razvejane širitve virusa je pomembno, da vsi udeleženci dogodka obvestite svoje kontakte s {{< sms_link R >}}, da se lahko le-ti samoizolirajo in tudi oni obvestijo svoje kontakte, vendar s ključno besedo Spark A. Zaželeno je, da se vsi udeleženci dogodka v najkrajšem času testirate in s ponovno uporabo sporočil Spark svoje kontakte obvestite o rezultatu. Na ta način boste v primeru negativnega testa prekinili njihovo samoizolacijo.
+{{% faq id="faq-who-is-the-source" question="After an event, at work, etc. several attendees developed COVID-19 symptoms or tested positive for SARS-CoV-2. All the others present received Spark messages from them and identified themselves as \"Root\". Who is the source and should inform his/her contacts with the Spark R message?" %}}
+In the case of the scenario described, it is very likely a superspreading event has happened. To limit the spread of the virus, it is important that all the participants notify their contacts with {{<sms_link R>}} so that they can isolate themselves and they can also notify their own contacts, but with the keyword Spark A. It is desirable that all participants of the event are tested as soon as possible and you re-inform your contacts about the results by using Spark P/N messages. In the event of a negative test you and your contacts may abort self-isolation, but remain careful for a few days more, since test's sensitivity is not 100%.
 {{% /faq %}}
 
-{{% faq id="faq-spark-a-after-r" question="Prejel sem sporočilo Spark R, nato pa še sporočilo Spark A od oseb, s katerimi sem bil v stiku v zadnjem tednu. Kako naj ravnam?" %}}
-Bolj pomembno je sporočilo Spark R, saj pomeni, da si morda asimptomatični prenašalec. Zate sta važna dva koraka: da se samoizoliraš in da obvestiš svoje kontakte s {{< sms_link A >}}  (glej „Asimptomatična okužba“ na vrhu strani).
+{{% faq id="faq-spark-a-after-r" question="I received a Spark R message and then a Spark A message from people I’ve been in contact with in the last week. How should I act?" %}}
+For you the Spark R message is more important as it means you may be an asymptomatic carrier. Two steps are important for you: isolate yourself and inform your contacts with {{<sms_link A>}} (see also ["Asymptomatic case"](index.html)).{{% /faq %}}
+
+{{% faq id="fag-stigma" question="I am concerned about stigmatization due to SARS-CoV-2 infection." %}}
+If we consider that the infection has so far been confirmed in almost every 30th Slovene, and there are at least as many undiscovered cases, we can assume that every 15th Slovene has been infected. This means that practically every Slovenian knows someone who has been infected with the virus. The public has shown that Slovenian society does not stigmatize SARS-CoV-2 infection. Instead of being afraid of stigma, let’s rather help so that no one will have to deal with such fear.
 {{% /faq %}}
 
-{{% faq id="fag-stigma" question="Skrbi me stigmatizacija zaradi okužbe s SARS-CoV-2." %}}
-Če pomislimo, da je bila okužba do sedaj potrjena pri skoraj vsakem 30. Slovencu, neodkritih primerov pa je vsaj še enkrat toliko, lahko predpostavljamo, da je bil okužen že vsak 15. Slovenec. To pomeni, da praktično vsak Slovenec pozna nekoga, ki je bil okužen z virusom. V javnosti se je izkazalo, da slovenska družba okužbe s SARS-CoV-2 ne stigmatizira. Namesto, da se stigme bojimo, raje pomagajmo, da se s takšno skrbjo ne bo treba ukvarjati nikomur.
+{{% faq id="faq-spark-anonymity" question="Is the use of the Covid-SPARK website anonymous?" %}}
+Yes, the use of the website is anonymous.
+
+The Covid-SPARK website does not collect any information about users or their clicks.
+Texts itntended for SMS meassages are created in the browser on the user's device.
+The service works in such a way that the user does not provide any phone number or contact to the server.
+The decision to whom, if at all, to send a message to is entirely yours and is made only on your phone.
+
+Covid-SPARK does not record clicks on individual chackboxes, and personal data cannot be submited in any input.
+The server does not record user IP addresses, nor does it track user behavior on the website.
+
+In other words: Covid-SPARK doesn’t know anything about you, so it can not store or process anything either.
+
+The website uses the Cloudflare cookie for operation, which is stored on the user's device for up to 30 days. Cloudflare ensures the anonymity of cookies. More about Cloudflare privacy policy: [Understanding the Cloudflare Cookies - Cloudflare Help Center](https://support.cloudflare.com/hc/en-us/articles/200170156-Understanding-the-Cloudflare-Cookies#12345682%5D)
 {{% /faq %}}
 
-{{% faq id="faq-spark-anonymity" question="Ali je uporaba spletne strani Covid-SPARK anonimna?" %}}
-Da, uporaba spletne strani je anonimna.
+{{% faq id="faq-sms-anonymity" question="Can I send a Spark message anonymously to my contacts?" %}}
+No, even if it is technically possible, no.
 
-Spletna stran Covid-SPARK ne zbira nikakršnih podatkov o uporabnikih ali klikih.
-Besedilo sporočila se ustvari v brskalniku na uporabnikovi napravi.
-Storitev deluje na način, da uporabnik nobene telefonske številke ali kontakta ne posreduje na strežnik.
-Odločitev, komu, če sploh, pošljete sporočilo, je povsem vaša in se izvede samo na vašem telefonu.
-
-Covid-SPARK ne beleži klikov na posamezna polja, osebnih podatkov pa na spletno stran sploh ni mogoče vnesti.
-Strežnik ne beleži IP naslovov uporabnikov, niti ne sledi obnašanju uporabnikov med uporabo.
-
-Z drugimi besedami: Covid-SPARK ne ve ničesar o vas, zato tudi ničesar ne more hraniti ali obdelovati.
-
-Spletna stran za delovanje uporablja piškotek servisa Cloudflare, ki se na uporabnikovi napravi hrani do 30 dni. Cloudflare zagotavlja anonimnost piškotkov. Več o politiki zasebnosti Cloudflare: [Understanding the Cloudflare Cookies – Cloudflare Help Center](https://support.cloudflare.com/hc/en-us/articles/200170156-Understanding-the-Cloudflare-Cookies#12345682%5D)
-{{% /faq %}}
-
-{{% faq id="faq-sms-anonymity" question="Ali lahko pošljem sporočilo Spark anonimno?" %}}
-Ne, tudi če je to tehnično mogoče, ne.
-
-Če bi ostal anonimen, oseba, ki bi prejela tvoje sporočilo, ne bi mogla presoditi, ali je bila res v stiku s tabo, saj ne bi vedela, kdo si. V kolikor želiš ohraniti svojo anonimnost, je priporočljivo, da uporabljaš vsaj mobilno aplikacijo [#OstaniZdrav](https://www.gov.si/teme/koronavirus-sars-cov-2/mobilna-aplikacija-ostanizdrav/), ki omogoča anonimno obveščanje med uporabniki aplikacije.
+If you remained anonymous, the person who received your message would not be able to judge if he/she was really in touch with you, as he/she would not know who you are. If you want to maintain your anonymity, it is recommended that you use at least the mobile application [#OstaniZdrav](https://www.gov.si/teme/koronavirus-sars-cov-2/mobilna-aplikacija-ostanizdrav/), which ensures anonymous notification between the application's users.
 {{% /faq %}}
