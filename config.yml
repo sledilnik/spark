@@ -10,6 +10,7 @@ enableRobotsTXT: true
 disableKinds:
   - categories
   - tags
+# sectionPagesMenu: main
 defaultContentLanguage: sl
 params:
   siteVersion: 1.1
@@ -20,6 +21,20 @@ languages:
       linkSledilnik: https://covid-19.sledilnik.org/sl
       version: Verzija
       goDateFormat: "2. 1. 2006"
+    # menu:
+    #   main:
+    #   - identifier: pages/motivation
+    #     name: Zakaj?
+    #     url: /sl/motivation.html
+    #     weight: 1
+    #   - identifier: pages/faq
+    #     name: FAQ
+    #     url: /sl/faq.html
+    #     weight: 2
+    #   - identifier: pages/contact
+    #     name: Kontakt
+    #     url: /sl/contact.html
+    #     weight: 3
     title: SPARK
     weight: 1
     languageName: Slovenščina
@@ -28,6 +43,20 @@ languages:
       linkSledilnik: https://covid-19.sledilnik.org/en
       version: Version
       goDateFormat: "1/2/2006"
+    # menu:
+    #   main:
+    #   - identifier: pages/motivation
+    #     name: Why?
+    #     url: /en/motivation.html
+    #     weight: 1
+    #   - identifier: pages/faq
+    #     name: FAQ
+    #     url: /en/faq.html
+    #     weight: 2
+    #   - identifier: pages/contact
+    #     name: Contact
+    #     url: /en/contact.html
+    #     weight: 3
     title: SPARK (English)
     weight: 2
     languageName: English

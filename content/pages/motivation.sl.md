@@ -1,6 +1,10 @@
 ---
 title: "Zakaj Covid-SPARK?"
+linktitle: "Zakaj?"
 url: /sl/motivation.html
+menu:
+  main:
+    weight: 5
 ---
 
 # Zakaj Covid-SPARK?

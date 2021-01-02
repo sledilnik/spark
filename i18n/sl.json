@@ -12,18 +12,6 @@
         "translation": "Projekt ekipe"
     },
     {
-        "id": "navbarMotivation",
-        "translation": "Zakaj?"
-    },
-    {
-        "id": "navbarFAQ",
-        "translation": "FAQ"
-    },
-    {
-        "id": "navbarContact",
-        "translation": "Kontakt"
-    },
-    {
         "id": "mostCommonSymptoms",
         "translation": "Najpogostejši simptomi"
     },
@@ -31,7 +19,7 @@
         "id": "fever",
         "translation": "vročina"
     },
-	{
+    {
         "id": "dryCough",
         "translation": "suh kašelj"
     },
@@ -39,7 +27,7 @@
         "id": "fatigue",
         "translation": "utrujenost"
     },
-	{
+    {
         "id": "lessCommonSymptoms",
         "translation": "Manj pogosti simptomi"
     },
@@ -47,11 +35,11 @@
         "id": "muscleJointPain",
         "translation": "bolečine v mišicah ali sklepih"
     },
-	{
+    {
         "id": "soreThroat",
         "translation": "boleče žrelo"
     },
-	{
+    {
         "id": "diarrhea",
         "translation": "driska"
     },
@@ -59,7 +47,7 @@
         "id": "conjunctivitis",
         "translation": "konjunktivitis"
     },
-	{
+    {
         "id": "headache",
         "translation": "glavobol"
     },
@@ -67,7 +55,7 @@
         "id": "lossTasteSmell",
         "translation": "izguba okusa ali vonja"
     },
-	{
+    {
         "id": "skinRash",
         "translation": "srbečica ali razbarvanost prstov"
     },
@@ -75,7 +63,7 @@
         "id": "severeSymptoms",
         "translation": "Resni simptomi"
     },
-	{
+    {
         "id": "shortBreath",
         "translation": "težave pri dihanju ali izguba sape"
     },
@@ -83,88 +71,104 @@
         "id": "chestPain",
         "translation": "bolečina ali pritisk v prsih"
     },
-	{
+    {
         "id": "lossSpeechMovement",
         "translation": "izguba zmožnosti govora ali premikanja"
     },
-	{
-		"id": "sparkPQ1",
+    {
+        "id": "sparkPQ1",
         "translation": "Prvi simptom sem imel/a <date-picker> , kužen/kužna pa bi lahko bil/a že 2 dneva prej."
-	},
-	{
-		"id": "sparkPQ1Femine",
+    },
+    {
+        "id": "sparkPQ1Masculine",
         "translation": "Prvi simptom sem imel <date-picker> , kužen pa bi lahko bil že 2 dneva prej."
-	},
-	{
-		"id": "sparkPQ1Masculine",
+    },
+    {
+        "id": "sparkPQ1Femine",
         "translation": "Prvi simptom sem imela <date-picker> , kužna pa bi lahko bila že 2 dneva prej."
-	},
-	{
-		"id": "sparkPQ2",
+    },
+    {
+        "id": "sparkPQ2",
         "translation": "Nimam simptomov, a mislim, da sem se okužil/a <date-picker> , 3 dni po tem pa bi lahko bil/a kužen/kužna."
-	},
-	{
-		"id": "sparkPQ2Femine",
+    },
+    {
+        "id": "sparkPQ2Masculine",
         "translation": "Nimam simptomov, a mislim, da sem se okužil <date-picker> , 3 dni po tem pa bi lahko bil kužen."
-	},
-	{
-		"id": "sparkPQ2Masculine",
+    },
+    {
+        "id": "sparkPQ2Femine",
         "translation": "Nimam simptomov, a mislim, da sem se okužila <date-picker> , 3 dni po tem pa bi lahko bila kužna."
-	},
-	{
-		"id": "sparkPQ3",
+    },
+    {
+        "id": "sparkPQ3",
         "translation": "Nimam simptomov in ne vem, kdaj sem se okužil/a. (Če boš naknadno zaznal/a simptome, to sporoči svojim kontaktom s »Spark S, covid-spark.info« .)"
-	},
-	{
-		"id": "sparkPQ3Femine",
+    },
+    {
+        "id": "sparkPQ3Masculine",
         "translation": "Nimam simptomov in ne vem, kdaj sem se okužil. (Če boš naknadno zaznal simptome, to sporoči svojim kontaktom s »Spark S, covid-spark.info« .)"
-	},
-	{
-		"id": "sparkPQ3Masculine",
+    },
+    {
+        "id": "sparkPQ3Femine",
         "translation": "Nimam simptomov in ne vem, kdaj sem se okužila. (Če boš naknadno zaznala simptome, to sporoči svojim kontaktom s »Spark S, covid-spark.info« .)"
-	},
-	{
-		"id": "sparkAQ1",
+    },
+    {
+        "id": "sparkAQ1",
         "translation": "Določi datum, ko si bil/a s pošiljateljem sporočila Spark R (prvič) v zadnjih 7 dneh v stiku: <date-picker> "
-	},
-	{
-		"id": "sparkAQ1Femine",
+    },
+    {
+        "id": "sparkAQ1Femine",
         "translation": "Določi datum, ko si bil s pošiljateljem sporočila Spark R (prvič) v zadnjih 7 dneh v stiku: <date-picker> "
-	},
-	{
-		"id": "sparkAQ1Masculine",
+    },
+    {
+        "id": "sparkAQ1Masculine",
         "translation": "Določi datum, ko si bila s pošiljateljem sporočila Spark R (prvič) v zadnjih 7 dneh v stiku: <date-picker> "
-	},
-	{
-		"id": "sparkRQ1",
+    },
+    {
+        "id": "sparkRQ1",
         "translation": "da sem bil/a v stiku z več osebami, ki so se po (navedi čas najzgodnešega simptoma izmed vseh pošiljateljev) <date-picker> izkazale za simptomatične ali pozitivne na SARS-CoV-2"
-	},
-	{
-		"id": "sparkRQ1Femine",
+    },
+    {
+        "id": "sparkRQ1Femine",
         "translation": "da sem bil v stiku z več osebami, ki so se po (navedi čas najzgodnešega simptoma izmed vseh pošiljateljev) <date-picker> izkazale za simptomatične ali pozitivne na SARS-CoV-2"
-	},
-	{
-		"id": "sparkRQ1Masculine",
+    },
+    {
+        "id": "sparkRQ1Masculine",
         "translation": "da sem bila v stiku z več osebami, ki so se po (navedi čas najzgodnešega simptoma izmed vseh pošiljateljev) <date-picker> izkazale za simptomatične ali pozitivne na SARS-CoV-2"
-	},
-	{
-		"id": "sparkRQ2",
+    },
+    {
+        "id": "sparkRQ2",
         "translation": "da sem bil/a <date-picker> na dogodku superširjenja virusa SARS-CoV-2"
-	},
-	{
-		"id": "sparkRQ2Femine",
+    },
+    {
+        "id": "sparkRQ2Femine",
         "translation": "da sem bil <date-picker> na dogodku superširjenja virusa SARS-CoV-2"
-	},
-	{
-		"id": "sparkRQ2Masculine",
+    },
+    {
+        "id": "sparkRQ2Masculine",
         "translation": "da sem bila <date-picker> na dogodku superširjenja virusa SARS-CoV-2"
-	},
-	{
-		"id": "sparkNQ1",
+    },
+    {
+        "id": "sparkNQ1",
         "translation": "Imam negativen test na SARS-CoV-2."
-	},
-	{
-		"id": "sparkNQ2",
+    },
+    {
+        "id": "sparkNQ2",
         "translation": "Moj potencialni vir okužbe se je izkazal za negativno testiranega."
-	}
+    },
+    {
+        "id": "genderMale",
+        "translation": "Moški"
+    },
+    {
+        "id": "genderFemale",
+        "translation": "Ženski"
+    },
+    {
+        "id": "useSpecialCharacters",
+        "translation": "Uporabi šumnike"
+    },
+    {
+        "id": "spreadSparks",
+        "translation": "Želim razširiti Covid-SPARK"
+    }
 ]

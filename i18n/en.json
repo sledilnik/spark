@@ -12,18 +12,6 @@
         "translation": "Project by"
     },
     {
-        "id": "navbarMotivation",
-        "translation": "Why?"
-    },
-    {
-        "id": "navbarFAQ",
-        "translation": "FAQ"
-    },
-    {
-        "id": "navbarContact",
-        "translation": "Contact"
-    },
-    {
         "id": "mostCommonSymptoms",
         "translation": "The most common symptoms"
     },
@@ -158,5 +146,9 @@
 	{
 		"id": "sparkNQ2",
         "translation": "My potential source of infection turned out to be negatively tested."
-	}
+    },
+    {
+        "id": "spreadSparks",
+        "translation": "I want to spread the word about Covid-SPARK"
+    }
 ]

@@ -2,7 +2,7 @@
 {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 {{ define "main" }}
-{{ $opts := dict "defines" (dict "process.env.NODE_ENV" `"development"`) }}
+{{ $opts := dict "defines" (dict "process.env.NODE_ENV" `"development"`) "sourcemap" "inline" }}
 {{ $scenarios := resources.Get "scripts/scenarios.js" | resources.ExecuteAsTemplate ( printf "%s/scenarios.js" .Site.Language.Lang) . | fingerprint }}
 {{ $smsbuilder := resources.Get "scripts/smsbuilder.js" | js.Build $opts | fingerprint }}
 
@@ -13,8 +13,7 @@
                 <section>
                     {{ .Content }}
                 </section>
-                <section id="sms-builder">
-                    <sms-builder scenario="{{ .Page.Params.scenario }}" locale="{{ .Site.Language.Lang }}"></sms-builder>
+                <section id="sms-builder" data-scenario="{{ .Page.Params.scenario }}" data-locale="{{ .Site.Language.Lang }}">
                 </section>
             </div>
         </div>

@@ -1,7 +1,7 @@
 // @see: https://versions.bulma.io/0.7.0/documentation/overview/customize/
 // 1. Import the initial variables
-@import "node_modules/bulma/sass/utilities/initial-variables";
-@import "node_modules/bulma/sass/utilities/functions";
+@import "bulma/sass/utilities/initial-variables";
+@import "bulma/sass/utilities/functions";
 
 // 2. Set your own initial variables
 $spark-green: #1abc9c;
@@ -13,9 +13,17 @@ $link: $spark-green;
 // 4. Setup your Custom Colors
 
 // 5. Add new color variables to the color map.
-@import "node_modules/bulma/sass/utilities/derived-variables";
+@import "bulma/sass/utilities/derived-variables";
 
-@import "node_modules/bulma/bulma.sass";
+@import "bulma/bulma.sass";
+
+
+// additional styles
+@import "bulma-checkradio/src/sass";
+
+$fa-font-path: "../webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
 
 // custom classes
 footer {
@@ -25,9 +33,9 @@ footer {
   text-align: center;
 }
 
-main {
-  margin-top: 50px;
-}
+// main {
+//   margin-top: 50px;
+// }
 
 @mixin spark-collapsable($color) {
   position: relative;
@@ -45,7 +53,6 @@ main {
         margin: 0 0 2px 0;
         padding: 5px auto;
 
-        
         &[open] {
           summary::after {
             // rotate open icon
@@ -124,6 +131,20 @@ main {
 
     &.disclaimer {
       text-align: center;
+    }
+  }
+}
+
+.sms {
+  section {
+    margin-bottom: 2em;
+  }
+
+  .questionare {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
   }
 }

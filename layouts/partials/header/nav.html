@@ -5,16 +5,25 @@
                 <a class="navbar-item" href="{{ .Site.Params.linkSledilnik }}" target="_blank" class="right">
                     <img src="/img/logo/LogoSledilnikWhite.png" alt="Sledilnik.org">
                 </a>
-                <!--<a class="navbar-item" href="index.html">Covid-SPARK</a>-->
                 <a class="navbar-item" href="{{ .Site.Home.Permalink }}">
                     <img src="/img/logo/LogoSparkWhite.png" alt="Covid-SPARK">
                 </a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarContent">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
             </div>
-            <div class="navbar-menu is-active">
+            <div class="navbar-menu" id="navbarContent">
                 <div class="navbar-start">
-                    <a class="navbar-item" href="{{ relref . " pages/motivation" }}" class="right">{{ T "navbarMotivation"}}</a>
-                    <a class="navbar-item" href="{{ relref . " pages/faq" }}" class="right">{{ T "navbarFAQ"}}</a>
-                    <a class="navbar-item" href="{{ relref . " pages/contact" }}" class="right">{{ T "navbarContact"}}</a>
+                    {{ $currentPage := . }}
+                    {{ range .Site.Menus.main }}
+                    <a class="navbar-item{{if or ($currentPage.IsMenuCurrent " main" .) ($currentPage.HasMenuCurrent "main" .) }} is-active{{end}}" href="{{ .URL | absLangURL }}"
+                        title="{{ .Title }}">{{ .Name }}</a>
+                    {{ end }}
+                </div>
+                <div class="navbar-end">
                     {{ range $.Translations }}
                     <a class="navbar-item" href="{{ .Permalink }}" class="right">{{ .Language.LanguageName }}</a>
                     {{ end }}

@@ -1,13 +1,27 @@
-import Vue from 'vue/dist/vue.js';
+// import Vue from 'vue'
+import Vue from 'vue/dist/vue.js'
 import { format } from 'date-fns'
 import VueI18n from 'vue-i18n'
+import VueQrcode from 'vue-qrcode'
 
-const dateFormat = 'dd. MM. yyyy';
 Vue.config.productionTip = false
 Vue.use(VueI18n)
 
+const i18n = new VueI18n({
+    locale: 'sl',
+    fallbackLocale: 'sl',
+    messages,
+})
+
+const dateFormat = i18n.t('dateFormat')
+
 const store = {
-    state: {},
+    state: {
+        controls: {
+            gender: undefined,
+            useSpecialCharacters: false
+        }
+    },
 
     loadInitialState(id) {
         Object.assign(this.state, scenarios[id])
@@ -17,11 +31,21 @@ const store = {
      * Renders single question text (with user's date)
      * @param Question q 
      */
-    renderQuestion(q) {
-        if (q.text.indexOf('<date-picker>') != -1) {
-            return q.text.replace('<date-picker> ', format(new Date(q.date), dateFormat))
+    renderQuestion(q, gender) {
+       
+        let tpl = undefined
+
+        if (gender == 'm' && q.textMasculine) {
+            tpl = i18n.t(q.textMasculine)
+        }else if (gender == 'f' && q.textFemine) {
+            tpl = i18n.t(q.textFemine)
         } else {
-            return `${q.text} (${format(new Date(q.date), dateFormat)})`
+            tpl = i18n.t(q.text)
+        }
+        if (tpl.indexOf('<date-picker>') != -1) {
+            return tpl.replace('<date-picker> ', format(new Date(q.date), dateFormat))
+        } else {
+            return `${tpl} (${format(new Date(q.date), dateFormat)})`
         }
     },
 
@@ -29,9 +53,10 @@ const store = {
      * Renders message body (according to user's answers)
      */
     renderSMSBody() {
-        return this.state.questions.filter(q => q.selected && q.date != null).map(q => {
-            return store.renderQuestion(q)
-        }).join(', ').trim()
+        return this.state.sections.reduce((acc, section) => {
+            acc.push(...section.questions.filter(q => q.selected && q.date != null).map(q => this.renderQuestion(q, this.state.controls.gender)))
+            return acc
+        }, []).join(', ').trim()
     },
 
     /**
@@ -42,10 +67,11 @@ const store = {
     }
 }
 
-Vue.component('checkbox', {
-    template: `<input type="checkbox" v-model="selected" />`,
+Vue.component('q-checkbox', {
+    template: `<span><input :id="id" class="is-checkradio" type="checkbox" v-model="selected" /><label :for="id" class="checkbox">&nbsp;</label></span>`,
     props: {
         question: Object,
+        id: String
     },
     computed: {
         selected: {
@@ -60,21 +86,7 @@ Vue.component('checkbox', {
 })
 
 Vue.component('date-picker', {
-    render(createElement) {
-        return createElement('input', {
-            style: {
-                display: this.show ? 'inline' : 'none'
-            },
-            attrs: {
-                type: 'date',
-                min: this.min,
-                max: this.max
-            },
-            domProps: {
-                value: this.dateModel
-            }
-        })
-    },
+    template: `<input v-if="show" class="is-primary" type="date" v-model="dateModel" :min="min" :max="max" />`,
     props: {
         daysBack: {
             type: Number,
@@ -117,29 +129,17 @@ Vue.component('date-picker', {
     }
 })
 
-Vue.component('tabular-question', {
-    template: `
-    <tr v-if="question.text">
-        <td><checkbox :question="question" /></td>
-        <td>{{ $t(question.text) }}</td>
-        <td><date-picker :question="question" :always-show="false" /></td>
-    </tr>
-    <tr v-else>
-        <td>{{ $t(question.title) }}</td>
-        <td></td>
-        <td></td>
-    </tr>
-    `,
-    props: {
-        question: Object,
-    },
-})
-
-Vue.component('inline-question', {
+Vue.component('li-question', {
     render(createElement) {
+        let translated = this.$t(this.question.text)
+        const isInline = translated.indexOf('<date-picker>') > -1
 
-        const datepicker = createElement('date-picker', { props: { question: this.question } })
-        const translated = this.$t(this.question.text)
+        if (!isInline) {
+            translated += ' <date-picker>'
+        }
+
+        const datepicker = createElement('date-picker', { props: { question: this.question, alwaysShow: isInline } })
+
         const parts = translated.split(' ').map((token) => {
             switch (token) {
                 case '<date-picker>':
@@ -149,8 +149,6 @@ Vue.component('inline-question', {
             }
         }).reduce((acc, el) => {
             const last = acc.pop() || ''
-            console.log('reducem', acc, el, last)
-
             if (typeof (last) != typeof (el)) {
                 acc.push(last, el)
                 return acc
@@ -165,32 +163,37 @@ Vue.component('inline-question', {
         }, [])
 
         return createElement(
-            'div',
+            'li',
             [
-                createElement('checkbox', { props: { question: this.question } }),
+                createElement('q-checkbox', { props: { question: this.question, id: this.id } }),
                 ...parts
             ]
         )
     },
     props: {
-        question: Object,
+        question: {
+            type: Object,
+            required: true,
+        },
+        id: {
+            type: String,
+            required: true
+        }
     },
 })
 
 Vue.component('questionare', {
     template: `
-    <section class="questions">
-        <div v-if="state.layout == 'tabular'">
-            <table class="table">
-                <tbody>
-                    <tabular-question v-for="(q, index) in state.questions" :key="index" :question="q" />
-                </tbody>
-            </table>
+    <div class="questionare box">
+        <div class="columns is-full is-multiline">
+            <div class="column" v-for="(section, sIndex) in state.sections" :key="sIndex">
+                <h3 v-if="section.title">{{ $t(section.title) }}</h3>
+                <ul>
+                    <li-question v-for="(q, qIndex) in section.questions" :key="qIndex" :id="'s-' + sIndex + '-q-' + qIndex" :question="q" />
+                </ul>
+            </div>
         </div>
-        <div v-else>
-            <inline-question v-for="(q, index) in state.questions" :key="index" :question="q" />
-        </div>
-    </section>
+    </div>
     `,
     data() {
         return {
@@ -200,10 +203,84 @@ Vue.component('questionare', {
 })
 
 Vue.component('sms-preview', {
-    template: `<div>{{ text }}</div>`,
+    template: `
+    <div class="box preview">
+    <h3>Ustvari SMS</h3>
+    <div class="level level-left">
+        <div class="level-item">
+            <input type="checkbox" id="control-gender-m" class="is-checkradio" v-model="isMale" />
+            <label for="control-gender-m">{{ $t('genderMale') }}</label>
+            <input type="checkbox" id="control-gender-f" class="is-checkradio" v-model="isFemale" />
+            <label for="control-gender-f">{{ $t('genderFemale') }}</label>
+        </div>
+        <div class="level-item">
+            <input type="checkbox" id="control-special-chars" class="is-checkradio" v-model="useSpecialChars" />
+            <label class="checkbox" for="control-special-chars">{{ $t('useSpecialCharacters') }}</label>
+        </div>
+    </div>
+    <div class="level">
+        <div class="level-item message-container">
+            <article class="message">
+                <div class="message-header">{{ $t('smsPreview') }}</div>
+                <div class="message-body">{{ text }}</div>
+            </article>
+        </div>
+    </div>
+    <div class="level">
+        <div class="level-item">
+            <a class="button" :href="smsLink"><span>{{ $t('sendSMSBtn' )}}</span><span class="icon is-small"><i class="fas fa-envelope"></i></span></a>
+        </div>
+    </div>
+    <div class="level">
+        <div class="level-item is-hidden-mobile">
+            <vue-qrcode :value="smsLink" />
+        <div>
+    </div>
+    </div>
+    </div>
+    `,
+    components: {
+        VueQrcode
+    },
+    methods: {
+        setGender(val) {
+            if (this.state.controls.gender === val) {
+                this.state.controls.gender = undefined
+            } else {
+                this.state.controls.gender = val
+            }
+        }
+    },
     computed: {
         text() {
             return store.renderSMS()
+        },
+        smsLink() {
+            return `sms:?body=${encodeURIComponent(store.renderSMS())}`
+        },
+        isMale: {
+            get: function () {
+                return this.state.controls.gender == 'm'
+            },
+            set: function () {
+                this.setGender('m')
+            }
+        },
+        isFemale: {
+            get() {
+                return this.state.controls.gender == 'f'
+            },
+            set() {
+                this.setGender('f')
+            }
+        },
+        useSpecialChars: {
+            get() {
+                return this.state.controls.useSpecialCharacters
+            },
+            set(val) {
+                this.state.controls.useSpecialCharacters = val
+            }
         }
     },
     data() {
@@ -213,41 +290,17 @@ Vue.component('sms-preview', {
     }
 })
 
-Vue.component('sms-builder', {
+new Vue({
+    el: '#sms-builder',
     template: `
-    <div>
+    <section>
         <questionare />
         <sms-preview />
-    </div>
+    </section>
     `,
-    props: {
-        scenario: {
-            type: String,
-            required: true
-        },
-        locale: {
-            type: String,
-            default: 'sl'
-        }
-    },
     beforeMount() {
-        this.$i18n.locale = this.locale
-        store.loadInitialState(this.scenario)
-    },
-})
-
-console.log(messages)
-
-const i18n = new VueI18n({
-    locale: 'en',
-    fallbackLocale: 'en',
-    messages,
-})
-
-const app = new Vue({
-    el: '#sms-builder',
-    props: {
-
+        this.$i18n.locale = this.$el.dataset.locale
+        store.loadInitialState(this.$el.dataset.scenario)
     },
     i18n,
 })

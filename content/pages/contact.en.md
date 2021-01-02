@@ -1,6 +1,9 @@
 ---
 title: "Contact"
 url: /en/contact.html
+menu:
+  main:
+    weight: 30
 ---
 
 # Contact

@@ -1,6 +1,9 @@
 ---
 title: "Kontakt"
 url: /sl/contact.html
+menu:
+  main:
+    weight: 30
 ---
 
 # Kontakt

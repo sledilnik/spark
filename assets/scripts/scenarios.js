@@ -2,107 +2,127 @@ const scenarios = {
     s: {
         layout: 'tabular',
         msgPrefix: 'SPARK-S: ',
-        questions: [
+        sections: [
             {
                 title: 'mostCommonSymptoms',
+                questions: [
+                    {
+                        text: 'fever',
+                    },
+                    {
+                        text: 'dryCough'
+                    },
+                    {
+                        text: 'fatigue'
+                    },
+                ]
             },
             {
-                text: 'fever',
+                title: 'lessCommonSymptoms',
+                questions: [
+                    {
+                        text: 'muscleJointPain'
+                    },
+                    {
+                        text: 'soreThroat'
+                    },
+                    {
+                        text: 'diarrhea'
+                    },
+                    {
+                        text: 'conjunctivitis'
+                    },
+                    {
+                        text: 'headache'
+                    },
+                    {
+                        text: 'lossTasteSmell'
+                    },
+                    {
+                        text: 'skinRash'
+                    },
+                ]
             },
             {
-                text: 'dryCough'
+                title: "severeSymptoms",
+                questions: [
+                    {
+                        text: 'shortBreath'
+                    },
+                    {
+                        text: 'chestPain'
+                    },
+                    {
+                        text: 'lossSpeechMovement'
+                    },
+                ]
             },
-            {
-                text: 'fatigue'
-            },
-            {
-                title: "lessCommonSymptoms"
-            },
-            {
-                text: 'muscleJointPain'
-            },
-            {
-                text: 'soreThroat'
-            },
-			{
-                text: 'diarrhea'
-            },
-            {
-                text: 'conjunctivitis'
-            },
-            {
-                text: 'headache'
-            },
-			{
-                text: 'lossTasteSmell'
-            },
-            {
-                text: 'skinRash'
-            },
-            {
-                title: "severeSymptoms"
-            },
-            {
-                text: 'shortBreath'
-            },
-            {
-                text: 'chestPain'
-            },
-            {
-                text: 'lossSpeechMovement'
-            },
+
         ]
     },
     p: {
         layout: 'inline',
         msgPrefix: 'SPARK-P: ',
-        questions: [
+        sections: [
             {
-                text: 'sparkPQ1'
-                textFemine: 'sparkPQ1Femine'
-                textMasculine: 'sparkPQ1Masculine'
-            },
-            {
-                text: 'sparkPQ2'
-                textFemine: 'sparkPQ2Femine'
-                textMasculine: 'sparkPQ2Masculine'
-            },
-            {
-                text: 'sparkPQ3'
-                textFemine: 'sparkPQ3Femine'
-                textMasculine: 'sparkPQ3Masculine'
-            },
+                questions: [
+                    {
+                        text: 'sparkPQ1',
+                        textFemine: 'sparkPQ1Femine',
+                        textMasculine: 'sparkPQ1Masculine'
+                    },
+                    {
+                        text: 'sparkPQ2',
+                        textFemine: 'sparkPQ2Femine',
+                        textMasculine: 'sparkPQ2Masculine'
+                    },
+                    {
+                        text: 'sparkPQ3',
+                        textFemine: 'sparkPQ3Femine',
+                        textMasculine: 'sparkPQ3Masculine'
+                    },
+                ]
+            }
         ]
     },
     a: {
-		layout: 'inline',
+        layout: 'inline',
         msgPrefix: 'SPARK-A: ',
-		        questions: [
+        sections: [
             {
-                text: 'sparkAQ1'
-                textFemine: 'sparkAQ1Femine'
-                textMasculine: 'sparkAQ1Masculine'
+                questions: [
+                    {
+                        text: 'sparkAQ1',
+                        textFemine: 'sparkAQ1Femine',
+                        textMasculine: 'sparkAQ1Masculine'
+                    }
+                ]
             }
         ]
     },
     r: {
-		layout: 'inline',
+        layout: 'inline',
         msgPrefix: 'SPARK-R: ',
-        questions: [
+        sections: [
             {
-                text: 'sparkRQ1'
-                textFemine: 'sparkRQ1Femine'
-                textMasculine: 'sparkRQ1Masculine'
-            },
-            {
-                text: 'sparkRQ2'
-                textFemine: 'sparkRQ2Femine'
-                textMasculine: 'sparkRQ2Masculine'
+                questions: [
+                    {
+                        text: 'sparkRQ1',
+                        textFemine: 'sparkRQ1Femine',
+                        textMasculine: 'sparkRQ1Masculine'
+                    },
+                    {
+                        text: 'sparkRQ2',
+                        textFemine: 'sparkRQ2Femine',
+                        textMasculine: 'sparkRQ2Masculine'
+                    }
+                ]
             }
         ]
+
     },
     n: {
-		layout: 'inline',
+        layout: 'inline',
         msgPrefix: 'SPARK-N: ',
         questions: [
             {
