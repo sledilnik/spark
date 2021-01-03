@@ -116,11 +116,11 @@
         "translation": "Določi datum, ko si bil/a s pošiljateljem sporočila Spark R (prvič) v zadnjih 7 dneh v stiku: <date-picker> "
     },
     {
-        "id": "sparkAQ1Femine",
+        "id": "sparkAQ1Masculine",
         "translation": "Določi datum, ko si bil s pošiljateljem sporočila Spark R (prvič) v zadnjih 7 dneh v stiku: <date-picker> "
     },
     {
-        "id": "sparkAQ1Masculine",
+        "id": "sparkAQ1Femine",
         "translation": "Določi datum, ko si bila s pošiljateljem sporočila Spark R (prvič) v zadnjih 7 dneh v stiku: <date-picker> "
     },
     {

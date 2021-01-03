@@ -24,7 +24,7 @@ Let's communicate. In this way, we will create a network of people and take cont
 
 Check to see if any of the situations below apply to you. If they do, follow the instructions.
 
-{{% collapsable summary="**Symptomatic case:** I have a symptom that is typical for COVID-19." %}}
+{{% collapsable id="spark-s" summary="**Symptomatic case:** I have a symptom that is typical for COVID-19." %}}
 You can [check]({{< ref "pages/simptoms" >}}) what symptoms are typical for COVID-19.
 
 Try to isolate yourself for 10 days and consult with your personal doctor about the symptoms. Send an SMS {{< sms_link S >}} to all of your contacts that you have 
@@ -36,7 +36,7 @@ If you are tested re-report your status. In the case of positive test send {{< s
 In the future, if you match the criteria for the "Root", i.e. you received 3 or more Spark S/P messages, then send {{< sms_link R >}}.
 {{% /collapsable %}}
 
-{{% collapsable summary="**Positive case:** I was tested positive for SARS-CoV-2." %}}
+{{% collapsable id="spark-p" summary="**Positive case:** I was tested positive for SARS-CoV-2." %}}
 Follow the epidemiologist's recommendations, isolate yourself and send people you have been in contact with in the last 14 days
 SMS {{<sms_link P>}}.
 If you installed the mobile application [#OstaniZdrav](https://www.gov.si/teme/koronavirus-sars-cov-2/mobilna-aplikacija-ostanizdrav/)
@@ -45,7 +45,7 @@ then apply for a TAN code and enter it in the application. In this way, you will
 In the future, if you match the criteria for the "Root", i.e. you received 3 or more Spark S/P messages, then send {{< sms_link R >}}.
 {{% /collapsable %}}
 
-{{% collapsable summary="**Asymptomatic case:** I received the Spark R message ..." %}}
+{{% collapsable id="spark-a" summary="**Asymptomatic case:** I received the Spark R message ..." %}}
 ... from a person that was possibly infectious and I was in contact with in the last 9 days.
 
 The person who sent you the Spark R message may be the source of a major spread of the virus. Because you were in contact with him/her,
@@ -63,7 +63,7 @@ In the future, if you match the criteria for the "Root", i.e. you recived 3 or m
 {{% /collapsable %}}
 
 
-{{% collapsable summary="**Root:** I received 3 or more Spark S/P messages ..." %}}
+{{% collapsable id="spark-r" summary="**Root:** I received 3 or more Spark S/P messages ..." %}}
 ... from different people that I was in contact with in the period from 5 days ago to 9 days ago.
 
 There is a high probability that you are infected. You may have been infected by these people, but you may be the source of their
@@ -75,7 +75,7 @@ If you are tested re-report your status. In the case of positive test send {{< s
 (see also "Positive case"), otherwise send {{< sms_link N >}}.
 {{% /collapsable %}}
 
-{{% collapsable summary="**Kontakt:** I recieved a Spark S, Spark P or Spark A message ..." %}}
+{{% collapsable id="spark-k" summary="**Kontakt:** I recieved a Spark S, Spark P or Spark A message ..." %}}
 ... from a person that was possibly infectious and I was in contact with in the last 5 days.
 
 The person who sent you this message has either symptoms specific to COVID-19 (Spark S), is positive on the new
