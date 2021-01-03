@@ -27,6 +27,16 @@ const store = {
         Object.assign(this.state, scenarios[id])
     },
 
+    selectQuestion(question, selected) {
+        if (this.state.selectmode === 'single') {
+            this.state.sections.forEach(s => {
+                s.questions.forEach(q => Vue.set(q, 'selected', false))
+            })
+        }
+        // question.selected = selected
+        Vue.set(question, 'selected', selected)
+    },
+
     /**
      * Renders single question text (with user's date)
      * @param Question q 
@@ -53,17 +63,46 @@ const store = {
      * Renders message body (according to user's answers)
      */
     renderSMSBody() {
-        return this.state.sections.reduce((acc, section) => {
+        var txt = this.state.sections.reduce((acc, section) => {
             acc.push(...section.questions.filter(q => q.selected && q.date != null).map(q => this.renderQuestion(q, this.state.controls.gender)))
             return acc
         }, []).join(', ').trim()
+
+        if (this.state.controls.useSpecialCharacters) {
+            return txt
+        } else {
+            const special = {
+                'Č': 'C',
+                'Š': 'S',
+                'Ž': 'Z',
+            }
+            return txt.split('').reduce((a, c) => {
+                const normChar = c.toUpperCase()
+                if (special[normChar]) {
+                    if (c == normChar) {
+                        return a + special[normChar]
+                    } else {
+                        return a + special[normChar].toLowerCase()
+                    }
+                } else {
+                    return a + c
+                }
+            }, '')
+        }
+        
     },
 
     /**
      * Renders whole message with prefix
      */
     renderSMS() {
-        return `${this.state.msgPrefix} ${this.renderSMSBody()}`
+        const body = this.renderSMSBody()
+        if (body && body.length) {
+            return `${this.state.msgPrefix} ${body}. ${i18n.t('smsSuffix')}`
+        } else {
+            return null;
+        }
+        
     }
 }
 
@@ -79,7 +118,7 @@ Vue.component('q-checkbox', {
                 return this.question.selected || false
             },
             set: function (val) {
-                this.$set(this.question, 'selected', val)
+                store.selectQuestion(this.question, val)
             }
         }
     }
@@ -218,18 +257,18 @@ Vue.component('sms-preview', {
             <label class="checkbox" for="control-special-chars">{{ $t('useSpecialCharacters') }}</label>
         </div>
     </div>
-    <div class="level is-align-items-center">
+    <div class="level is-align-items-center" v-if="text">
         <div class="message">
             <div class="message-header">{{ $t('smsPreview') }}</div>
             <div class="message-body">{{ text }}</div>
         </div>
     </div>
-    <div class="level">
+    <div class="level" v-if="text">
         <div class="level-item">
             <a class="button" :href="smsLink"><span>{{ $t('sendSMSBtn' )}}</span><span class="icon is-small"><i class="fas fa-envelope"></i></span></a>
         </div>
     </div>
-    <div class="level">
+    <div class="level" v-if="text">
         <div class="level-item is-hidden-mobile">
             <vue-qrcode :value="smsLink" />
         </div>

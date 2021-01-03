@@ -162,5 +162,9 @@
     {
         "id": "sendSMSBtn",
         "translation": "Send SMS"
+    },
+    {
+        "id": "smsSuffix",
+        "translation": "Check it on https://covid-spark.info"
     }
 ]

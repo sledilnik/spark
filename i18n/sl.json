@@ -182,5 +182,9 @@
     {
         "id": "sendSMSBtn",
         "translation": "Pošlji SMS"
+    },
+    {
+        "id": "smsSuffix",
+        "translation": "Preveri, kaj to pomeni zate: https://covid-spark.info"
     }
 ]

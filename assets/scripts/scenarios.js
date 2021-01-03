@@ -1,6 +1,5 @@
 const scenarios = {
     s: {
-        layout: 'tabular',
         msgPrefix: 'SPARK-S: ',
         sections: [
             {
@@ -61,7 +60,7 @@ const scenarios = {
         ]
     },
     p: {
-        layout: 'inline',
+        selectmode: 'single',
         msgPrefix: 'SPARK-P: ',
         sections: [
             {
@@ -86,7 +85,6 @@ const scenarios = {
         ]
     },
     a: {
-        layout: 'inline',
         msgPrefix: 'SPARK-A: ',
         sections: [
             {
@@ -101,7 +99,6 @@ const scenarios = {
         ]
     },
     r: {
-        layout: 'inline',
         msgPrefix: 'SPARK-R: ',
         sections: [
             {
@@ -122,7 +119,6 @@ const scenarios = {
 
     },
     n: {
-        layout: 'inline',
         msgPrefix: 'SPARK-N: ',
         questions: [
             {
