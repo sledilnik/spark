@@ -1,2 +1,0 @@
-**The Covid-SPARK is a set of short guidelines** for responsible handling and prevention of potential transmission of SARS-CoV-2 infections.
-Following its advices, we will protect our loved ones and help the epidemiological service to curb the virus.

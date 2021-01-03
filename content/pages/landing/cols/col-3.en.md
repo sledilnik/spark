@@ -1,1 +1,0 @@
-**The Covid-SPARK system is based on trust between acquaintances, friends etc.**

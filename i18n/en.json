@@ -76,38 +76,6 @@
         "translation": "Loss of speech or movement"
     },
 	{
-		"id": "",
-        "translation": ""
-	},
-	{
-		"id": "",
-        "translation": ""
-	},
-	{
-		"id": "",
-        "translation": ""
-	},
-	{
-		"id": "",
-        "translation": ""
-	},
-	{
-		"id": "",
-        "translation": ""
-	},
-	{
-		"id": "",
-        "translation": ""
-	},
-	{
-		"id": "",
-        "translation": ""
-	},
-	{
-		"id": "",
-        "translation": ""
-	},
-	{
 		"id": "sparkPQ1",
         "translation": "I had the first symptom on <date-picker> , but I could have been infectious 2 days earlier."
 	},
@@ -146,14 +114,6 @@
 	{
 		"id": "sparkNQ2",
         "translation": "My potential source of infection turned out to be negatively tested."
-    },
-    {
-        "id": "spreadSparks",
-        "translation": "I want to spread the word about Covid-SPARK"
-    },
-    {
-        "id": "thankYou",
-        "translation": "Thank you for participating in the fight against the SARS-CoV-2 virus!"
     },
     {
         "id": "smsPreview",

@@ -1,1 +1,1 @@
-<a href="{{ ref . (printf "sms/%s" (index .Params 0)) }}"><b>»Spark {{ index .Params 0 }}, covid-spark.info«</b> <i class="fa fa-envelope"></i></a>
+<a href="{{ relref . (printf "sms/%s" (index .Params 0)) }}"><b>»Spark {{ index .Params 0 }}, covid-spark.info«</b> <i class="fa fa-envelope"></i></a>

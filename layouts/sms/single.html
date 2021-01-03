@@ -3,7 +3,7 @@
 {{ end }}
 {{ define "main" }}
 {{ $opts := dict "defines" (dict "process.env.NODE_ENV" `"development"`) "sourcemap" "inline" }}
-{{ $scenarios := resources.Get "scripts/scenarios.js" | resources.ExecuteAsTemplate ( printf "%s/scenarios.js" .Site.Language.Lang) . | fingerprint }}
+{{ $scenarios := resources.Get "scripts/scenarios.js" | fingerprint }}
 {{ $smsbuilder := resources.Get "scripts/smsbuilder.js" | js.Build $opts | fingerprint }}
 
 <main class="sms">

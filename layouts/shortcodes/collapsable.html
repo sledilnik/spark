@@ -1,0 +1,4 @@
+<details id="{{ .Get "id" }}" class="collapsable">
+    <summary>{{ .Get "summary" | markdownify }}</summary>
+    <div class="details-body">{{ .Inner | markdownify }}</div>
+</details>

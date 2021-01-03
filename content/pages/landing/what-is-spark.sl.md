@@ -1,1 +1,0 @@
-# Kaj je Covid-SPARK?
