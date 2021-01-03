@@ -1,5 +1,5 @@
 ---
-url: /sl/A.html
+url: /en/A.html
 title: Spark A
 scenario: a
 ---
