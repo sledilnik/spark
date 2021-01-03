@@ -1,9 +1,9 @@
 ---
 title: Spark
 ---
-{{< notification >}}
-<a href="{{ relref . "pages/share" }}"><i class="fas fa-envelope"></i> I want to spread the word about Covid-SPARK <i class="fas fa-envelope"></i></a>
-{{< /notification >}}
+{{% notification %}}
+<a href="{{ relref "pages/share" }}"><i class="fas fa-envelope"></i> I want to spread the word about Covid-SPARK <i class="fas fa-envelope"></i></a>
+{{% /notification %}}
 
 {{% section class="intro" %}}
 We compose an SMS for you which will help you control the virus.

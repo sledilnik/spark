@@ -1,9 +1,9 @@
 ---
 title: Spark
 ---
-{{< notification >}}
-<a href="{{ relref . "pages/share" }}"><i class="fas fa-envelope"></i> Želim razširiti Covid-SPARK <i class="fas fa-envelope"></i></a>
-{{< /notification >}}
+{{% notification %}}
+<a href="{{< relref "pages/share" >}}"><i class="fas fa-envelope"></i> Želim razširiti Covid-SPARK <i class="fas fa-envelope"></i></a>
+{{% /notification %}}
 
 {{% section class="intro" %}}
 Za vas sestavimo SMS, s katerim boste pripomogli k obvladovanju virusa.
