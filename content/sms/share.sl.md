@@ -1,6 +1,7 @@
 ---
 title: "Pages"
 url: /sl/share.html
+scenario: share
 ---
 # "Sharing is caring"
 

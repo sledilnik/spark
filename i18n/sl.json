@@ -178,5 +178,9 @@
     {
         "id": "smsSuffix",
         "translation": "Preveri, kaj to pomeni zate: https://covid-spark.info"
+    },
+    {
+        "id": "shareSMS",
+        "translation": "Obišči spletni portal https://covid-spark.info. Deli naprej, da omejimo virus."
     }
 ]

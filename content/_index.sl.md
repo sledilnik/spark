@@ -2,7 +2,7 @@
 title: Spark
 ---
 {{% notification %}}
-<a href="{{< relref "pages/share" >}}"><i class="fas fa-envelope"></i> Želim razširiti Covid-SPARK <i class="fas fa-envelope"></i></a>
+<a href="{{< relref "sms/share" >}}"><i class="fas fa-envelope"></i> Želim razširiti Covid-SPARK <i class="fas fa-envelope"></i></a>
 {{% /notification %}}
 
 {{% section class="intro" %}}

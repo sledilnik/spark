@@ -1,6 +1,7 @@
 const scenarios = {
     s: {
         msgPrefix: 'SPARK-S: ',
+        genderSelect: true,
         sections: [
             {
                 title: 'mostCommonSymptoms',
@@ -62,6 +63,7 @@ const scenarios = {
     p: {
         selectmode: 'single',
         msgPrefix: 'SPARK-P: ',
+        genderSelect: true,
         sections: [
             {
                 questions: [
@@ -86,6 +88,7 @@ const scenarios = {
     },
     a: {
         msgPrefix: 'SPARK-A: ',
+        genderSelect: true,
         sections: [
             {
                 questions: [
@@ -100,6 +103,7 @@ const scenarios = {
     },
     r: {
         msgPrefix: 'SPARK-R: ',
+        genderSelect: true,
         sections: [
             {
                 questions: [
@@ -120,6 +124,7 @@ const scenarios = {
     },
     n: {
         msgPrefix: 'SPARK-N: ',
+        genderSelect: true,
         questions: [
             {
                 text: 'sparkNQ1'
@@ -128,5 +133,9 @@ const scenarios = {
                 text: 'sparkNQ2'
             }
         ]
+    },
+    share: {
+        msg: 'shareSMS',
+        genderSelect: false,
     }
 }

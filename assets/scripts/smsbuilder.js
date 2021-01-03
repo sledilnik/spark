@@ -20,16 +20,17 @@ const store = {
         controls: {
             gender: undefined,
             useSpecialCharacters: false
-        }
+        },
+        scenario: {}
     },
 
     loadInitialState(id) {
-        Object.assign(this.state, scenarios[id])
+        this.state.scenario = Object.assign({}, scenarios[id])
     },
 
     selectQuestion(question, selected) {
         if (this.state.selectmode === 'single') {
-            this.state.sections.forEach(s => {
+            this.state.scenario.sections.forEach(s => {
                 s.questions.forEach(q => Vue.set(q, 'selected', false))
             })
         }
@@ -42,12 +43,12 @@ const store = {
      * @param Question q 
      */
     renderQuestion(q, gender) {
-       
+
         let tpl = undefined
 
         if (gender == 'm' && q.textMasculine) {
             tpl = i18n.t(q.textMasculine)
-        }else if (gender == 'f' && q.textFemine) {
+        } else if (gender == 'f' && q.textFemine) {
             tpl = i18n.t(q.textFemine)
         } else {
             tpl = i18n.t(q.text)
@@ -63,46 +64,57 @@ const store = {
      * Renders message body (according to user's answers)
      */
     renderSMSBody() {
-        var txt = this.state.sections.reduce((acc, section) => {
+        if (!this.state.scenario.sections) {
+            return this.state.scenario.msg
+        }
+        return this.state.scenario.sections.reduce((acc, section) => {
             acc.push(...section.questions.filter(q => q.selected && q.date != null).map(q => this.renderQuestion(q, this.state.controls.gender)))
             return acc
         }, []).join(', ').trim()
+    },
 
-        if (this.state.controls.useSpecialCharacters) {
-            return txt
-        } else {
-            const special = {
-                'Č': 'C',
-                'Š': 'S',
-                'Ž': 'Z',
-            }
-            return txt.split('').reduce((a, c) => {
-                const normChar = c.toUpperCase()
-                if (special[normChar]) {
-                    if (c == normChar) {
-                        return a + special[normChar]
-                    } else {
-                        return a + special[normChar].toLowerCase()
-                    }
-                } else {
-                    return a + c
-                }
-            }, '')
+    replaceSpecialCharacters(txt) {
+        const special = {
+            'Č': 'C',
+            'Š': 'S',
+            'Ž': 'Z',
         }
-        
+        return txt.split('').reduce((a, c) => {
+            const normChar = c.toUpperCase()
+            if (special[normChar]) {
+                if (c == normChar) {
+                    return a + special[normChar]
+                } else {
+                    return a + special[normChar].toLowerCase()
+                }
+            } else {
+                return a + c
+            }
+        }, '')
     },
 
     /**
      * Renders whole message with prefix
      */
     renderSMS() {
-        const body = this.renderSMSBody()
-        if (body && body.length) {
-            return `${this.state.msgPrefix} ${body}. ${i18n.t('smsSuffix')}`
+
+        var txt = ''
+        if (!this.state.scenario.sections || this.state.scenario.sections.length == 0) {
+            txt = i18n.t(this.state.scenario.msg)
         } else {
-            return null;
+            const body = this.renderSMSBody()
+            if (body && body.length) {
+                txt =  `${this.state.scenario.msgPrefix} ${body}. ${i18n.t('smsSuffix')}`
+            } else {
+                return null
+            }
         }
-        
+
+        if (this.state.controls.useSpecialCharacters) {
+            return txt
+        } else {
+            return this.replaceSpecialCharacters(txt)
+        }
     }
 }
 
@@ -225,7 +237,7 @@ Vue.component('questionare', {
     template: `
     <div class="questionare box">
         <div class="columns is-full is-multiline">
-            <div class="column" v-for="(section, sIndex) in state.sections" :key="sIndex">
+            <div class="column" v-for="(section, sIndex) in state.scenario.sections" :key="sIndex">
                 <h3 v-if="section.title">{{ $t(section.title) }}</h3>
                 <ul>
                     <li-question v-for="(q, qIndex) in section.questions" :key="qIndex" :id="'s-' + sIndex + '-q-' + qIndex" :question="q" />
@@ -246,7 +258,7 @@ Vue.component('sms-preview', {
     <div class="box preview">
     <h3>Ustvari SMS</h3>
     <div class="level level-left">
-        <div class="level-item">
+        <div class="level-item" v-if="state.scenario.genderSelect">
             <input type="checkbox" id="control-gender-m" class="is-checkradio" v-model="isMale" />
             <label for="control-gender-m">{{ $t('genderMale') }}</label>
             <input type="checkbox" id="control-gender-f" class="is-checkradio" v-model="isFemale" />
@@ -330,13 +342,18 @@ new Vue({
     el: '#sms-builder',
     template: `
     <section>
-        <questionare />
+        <questionare v-if="state.scenario.sections" />
         <sms-preview />
     </section>
     `,
     beforeMount() {
         this.$i18n.locale = this.$el.dataset.locale
         store.loadInitialState(this.$el.dataset.scenario)
+    },
+    data() {
+        return {
+            state: store.state,
+        }
     },
     i18n,
 })
